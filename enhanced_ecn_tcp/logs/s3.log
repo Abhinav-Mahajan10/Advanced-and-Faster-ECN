@@ -1,0 +1,824 @@
+Calling target program-options parser
+[04:51:47.246] [bmv2] [D] [thread 40120] Set default default entry for table 'MyIngress.ipv4_lpm': NoAction - 
+[04:51:47.247] [bmv2] [D] [thread 40120] Set default default entry for table 'tbl_mark_ecn': MyEgress.mark_ecn - 
+[04:51:47.247] [bmv2] [D] [thread 40120] Set default default entry for table 'tbl_ecn155': ecn155 - 
+[04:51:47.247] [bmv2] [D] [thread 40120] Set default default entry for table 'tbl_ecn162': ecn162 - 
+[04:51:47.247] [bmv2] [D] [thread 40120] Set default default entry for table 'tbl_ecn168': ecn168 - 
+[04:51:47.247] [bmv2] [D] [thread 40120] Set default default entry for table 'tbl_ecn173': ecn173 - 
+Adding interface s3-eth1 as port 1
+[04:51:47.247] [bmv2] [D] [thread 40120] Adding interface s3-eth1 as port 1
+Adding interface s3-eth2 as port 2
+[04:51:47.279] [bmv2] [D] [thread 40120] Adding interface s3-eth2 as port 2
+Adding interface s3-eth3 as port 3
+[04:51:47.313] [bmv2] [D] [thread 40120] Adding interface s3-eth3 as port 3
+Server listening on 0.0.0.0:50053
+[04:51:47.347] [bmv2] [I] [thread 40120] Starting Thrift server on port 9092
+[04:51:47.348] [bmv2] [I] [thread 40120] Thrift server was started
+[04:51:47.348] [bmv2] [D] [thread 40130] [0.0] [cxt 0] Processing packet received on port 1
+[04:51:47.348] [bmv2] [D] [thread 40130] [0.0] [cxt 0] Parser 'parser': start
+[04:51:47.348] [bmv2] [D] [thread 40130] [0.0] [cxt 0] Parser 'parser' entering state 'start'
+[04:51:47.348] [bmv2] [D] [thread 40130] [0.0] [cxt 0] Extracting header 'ethernet'
+[04:51:47.348] [bmv2] [D] [thread 40130] [0.0] [cxt 0] Parser state 'start': key is 86dd
+[04:51:47.348] [bmv2] [T] [thread 40130] [0.0] [cxt 0] Bytes parsed: 14
+[04:51:47.348] [bmv2] [D] [thread 40130] [0.0] [cxt 0] Parser 'parser': end
+[04:51:47.348] [bmv2] [D] [thread 40130] [0.0] [cxt 0] Pipeline 'ingress': start
+[04:51:47.348] [bmv2] [T] [thread 40130] [0.0] [cxt 0] ecn.p4(133) Condition "hdr.ipv4.isValid()" (node_2) is false
+[04:51:47.348] [bmv2] [D] [thread 40130] [0.0] [cxt 0] Pipeline 'ingress': end
+[04:51:47.349] [bmv2] [D] [thread 40130] [0.0] [cxt 0] Egress port is 0
+[04:51:47.349] [bmv2] [D] [thread 40130] [1.0] [cxt 0] Processing packet received on port 1
+[04:51:47.349] [bmv2] [D] [thread 40130] [1.0] [cxt 0] Parser 'parser': start
+[04:51:47.349] [bmv2] [D] [thread 40130] [1.0] [cxt 0] Parser 'parser' entering state 'start'
+[04:51:47.349] [bmv2] [D] [thread 40130] [1.0] [cxt 0] Extracting header 'ethernet'
+[04:51:47.349] [bmv2] [D] [thread 40130] [1.0] [cxt 0] Parser state 'start': key is 86dd
+[04:51:47.349] [bmv2] [T] [thread 40130] [1.0] [cxt 0] Bytes parsed: 14
+[04:51:47.349] [bmv2] [D] [thread 40130] [1.0] [cxt 0] Parser 'parser': end
+[04:51:47.349] [bmv2] [D] [thread 40130] [1.0] [cxt 0] Pipeline 'ingress': start
+[04:51:47.349] [bmv2] [T] [thread 40130] [1.0] [cxt 0] ecn.p4(133) Condition "hdr.ipv4.isValid()" (node_2) is false
+[04:51:47.349] [bmv2] [D] [thread 40130] [1.0] [cxt 0] Pipeline 'ingress': end
+[04:51:47.349] [bmv2] [D] [thread 40130] [1.0] [cxt 0] Egress port is 0
+[04:51:47.349] [bmv2] [D] [thread 40131] [0.0] [cxt 0] Pipeline 'egress': start
+[04:51:47.349] [bmv2] [T] [thread 40131] [0.0] [cxt 0] ecn.p4(152) Condition "hdr.ipv4.ecn == 1 || hdr.ipv4.ecn == 2" (node_6) is false
+[04:51:47.349] [bmv2] [T] [thread 40131] [0.0] [cxt 0] Applying table 'tbl_ecn162'
+[04:51:47.349] [bmv2] [D] [thread 40131] [0.0] [cxt 0] Looking up key:
+
+[04:51:47.349] [bmv2] [D] [thread 40131] [0.0] [cxt 0] Table 'tbl_ecn162': miss
+[04:51:47.349] [bmv2] [D] [thread 40131] [0.0] [cxt 0] Action entry is ecn162 - 
+[04:51:47.349] [bmv2] [T] [thread 40131] [0.0] [cxt 0] Action ecn162
+[04:51:47.349] [bmv2] [T] [thread 40131] [0.0] [cxt 0] ecn.p4(162) Primitive source_ip_register.read(source_ip_register_value, 0)
+[04:51:47.349] [bmv2] [T] [thread 40131] [0.0] [cxt 0] Read register 'MyEgress.source_ip_register' at index 0 read value 0
+[04:51:47.349] [bmv2] [T] [thread 40131] [0.0] [cxt 0] ecn.p4(163) Primitive source_port_register.read(source_port_register_value, 0)
+[04:51:47.349] [bmv2] [T] [thread 40131] [0.0] [cxt 0] Read register 'MyEgress.source_port_register' at index 0 read value 0
+[04:51:47.349] [bmv2] [T] [thread 40131] [0.0] [cxt 0] ecn.p4(165) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.ipv4.dstAddr == source_ip_register_value ..." (node_11) is false
+[04:51:47.349] [bmv2] [T] [thread 40131] [0.0] [cxt 0] ecn.p4(171) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.tcp.cwr == 1 && hdr.ipv4.srcAddr == source_ip_register_value" (node_13) is false
+[04:51:47.349] [bmv2] [D] [thread 40131] [0.0] [cxt 0] Pipeline 'egress': end
+[04:51:47.349] [bmv2] [D] [thread 40131] [0.0] [cxt 0] Deparser 'deparser': start
+[04:51:47.349] [bmv2] [T] [thread 40131] [0.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[04:51:47.349] [bmv2] [D] [thread 40131] [0.0] [cxt 0] Deparsing header 'ethernet'
+[04:51:47.349] [bmv2] [D] [thread 40131] [0.0] [cxt 0] Deparser 'deparser': end
+[04:51:47.349] [bmv2] [D] [thread 40131] [1.0] [cxt 0] Pipeline 'egress': start
+[04:51:47.349] [bmv2] [T] [thread 40131] [1.0] [cxt 0] ecn.p4(152) Condition "hdr.ipv4.ecn == 1 || hdr.ipv4.ecn == 2" (node_6) is false
+[04:51:47.349] [bmv2] [T] [thread 40131] [1.0] [cxt 0] Applying table 'tbl_ecn162'
+[04:51:47.349] [bmv2] [D] [thread 40131] [1.0] [cxt 0] Looking up key:
+
+[04:51:47.349] [bmv2] [D] [thread 40131] [1.0] [cxt 0] Table 'tbl_ecn162': miss
+[04:51:47.349] [bmv2] [D] [thread 40131] [1.0] [cxt 0] Action entry is ecn162 - 
+[04:51:47.349] [bmv2] [T] [thread 40131] [1.0] [cxt 0] Action ecn162
+[04:51:47.349] [bmv2] [T] [thread 40131] [1.0] [cxt 0] ecn.p4(162) Primitive source_ip_register.read(source_ip_register_value, 0)
+[04:51:47.349] [bmv2] [T] [thread 40131] [1.0] [cxt 0] Read register 'MyEgress.source_ip_register' at index 0 read value 0
+[04:51:47.349] [bmv2] [T] [thread 40131] [1.0] [cxt 0] ecn.p4(163) Primitive source_port_register.read(source_port_register_value, 0)
+[04:51:47.349] [bmv2] [T] [thread 40131] [1.0] [cxt 0] Read register 'MyEgress.source_port_register' at index 0 read value 0
+[04:51:47.349] [bmv2] [T] [thread 40131] [1.0] [cxt 0] ecn.p4(165) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.ipv4.dstAddr == source_ip_register_value ..." (node_11) is false
+[04:51:47.349] [bmv2] [T] [thread 40131] [1.0] [cxt 0] ecn.p4(171) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.tcp.cwr == 1 && hdr.ipv4.srcAddr == source_ip_register_value" (node_13) is false
+[04:51:47.349] [bmv2] [D] [thread 40131] [1.0] [cxt 0] Pipeline 'egress': end
+[04:51:47.349] [bmv2] [D] [thread 40131] [1.0] [cxt 0] Deparser 'deparser': start
+[04:51:47.349] [bmv2] [T] [thread 40131] [1.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[04:51:47.349] [bmv2] [D] [thread 40131] [1.0] [cxt 0] Deparsing header 'ethernet'
+[04:51:47.349] [bmv2] [D] [thread 40131] [1.0] [cxt 0] Deparser 'deparser': end
+[04:51:47.349] [bmv2] [D] [thread 40135] [0.0] [cxt 0] Transmitting packet of size 90 out of port 0
+[04:51:47.349] [bmv2] [D] [thread 40135] [1.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[04:51:47.823] [bmv2] [D] [thread 40130] [2.0] [cxt 0] Processing packet received on port 2
+[04:51:47.823] [bmv2] [D] [thread 40130] [2.0] [cxt 0] Parser 'parser': start
+[04:51:47.823] [bmv2] [D] [thread 40130] [2.0] [cxt 0] Parser 'parser' entering state 'start'
+[04:51:47.823] [bmv2] [D] [thread 40130] [2.0] [cxt 0] Extracting header 'ethernet'
+[04:51:47.823] [bmv2] [D] [thread 40130] [2.0] [cxt 0] Parser state 'start': key is 86dd
+[04:51:47.823] [bmv2] [T] [thread 40130] [2.0] [cxt 0] Bytes parsed: 14
+[04:51:47.823] [bmv2] [D] [thread 40130] [2.0] [cxt 0] Parser 'parser': end
+[04:51:47.823] [bmv2] [D] [thread 40130] [2.0] [cxt 0] Pipeline 'ingress': start
+[04:51:47.823] [bmv2] [T] [thread 40130] [2.0] [cxt 0] ecn.p4(133) Condition "hdr.ipv4.isValid()" (node_2) is false
+[04:51:47.823] [bmv2] [D] [thread 40130] [2.0] [cxt 0] Pipeline 'ingress': end
+[04:51:47.823] [bmv2] [D] [thread 40130] [2.0] [cxt 0] Egress port is 0
+[04:51:47.823] [bmv2] [D] [thread 40131] [2.0] [cxt 0] Pipeline 'egress': start
+[04:51:47.823] [bmv2] [T] [thread 40131] [2.0] [cxt 0] ecn.p4(152) Condition "hdr.ipv4.ecn == 1 || hdr.ipv4.ecn == 2" (node_6) is false
+[04:51:47.823] [bmv2] [T] [thread 40131] [2.0] [cxt 0] Applying table 'tbl_ecn162'
+[04:51:47.823] [bmv2] [D] [thread 40131] [2.0] [cxt 0] Looking up key:
+
+[04:51:47.823] [bmv2] [D] [thread 40131] [2.0] [cxt 0] Table 'tbl_ecn162': miss
+[04:51:47.823] [bmv2] [D] [thread 40131] [2.0] [cxt 0] Action entry is ecn162 - 
+[04:51:47.823] [bmv2] [T] [thread 40131] [2.0] [cxt 0] Action ecn162
+[04:51:47.823] [bmv2] [T] [thread 40131] [2.0] [cxt 0] ecn.p4(162) Primitive source_ip_register.read(source_ip_register_value, 0)
+[04:51:47.823] [bmv2] [T] [thread 40131] [2.0] [cxt 0] Read register 'MyEgress.source_ip_register' at index 0 read value 0
+[04:51:47.823] [bmv2] [T] [thread 40131] [2.0] [cxt 0] ecn.p4(163) Primitive source_port_register.read(source_port_register_value, 0)
+[04:51:47.823] [bmv2] [T] [thread 40131] [2.0] [cxt 0] Read register 'MyEgress.source_port_register' at index 0 read value 0
+[04:51:47.823] [bmv2] [T] [thread 40131] [2.0] [cxt 0] ecn.p4(165) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.ipv4.dstAddr == source_ip_register_value ..." (node_11) is false
+[04:51:47.823] [bmv2] [T] [thread 40131] [2.0] [cxt 0] ecn.p4(171) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.tcp.cwr == 1 && hdr.ipv4.srcAddr == source_ip_register_value" (node_13) is false
+[04:51:47.823] [bmv2] [D] [thread 40131] [2.0] [cxt 0] Pipeline 'egress': end
+[04:51:47.823] [bmv2] [D] [thread 40131] [2.0] [cxt 0] Deparser 'deparser': start
+[04:51:47.823] [bmv2] [T] [thread 40131] [2.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[04:51:47.823] [bmv2] [D] [thread 40131] [2.0] [cxt 0] Deparsing header 'ethernet'
+[04:51:47.823] [bmv2] [D] [thread 40131] [2.0] [cxt 0] Deparser 'deparser': end
+[04:51:47.823] [bmv2] [D] [thread 40130] [3.0] [cxt 0] Processing packet received on port 2
+[04:51:47.823] [bmv2] [D] [thread 40130] [3.0] [cxt 0] Parser 'parser': start
+[04:51:47.823] [bmv2] [D] [thread 40130] [3.0] [cxt 0] Parser 'parser' entering state 'start'
+[04:51:47.823] [bmv2] [D] [thread 40130] [3.0] [cxt 0] Extracting header 'ethernet'
+[04:51:47.823] [bmv2] [D] [thread 40130] [3.0] [cxt 0] Parser state 'start': key is 86dd
+[04:51:47.823] [bmv2] [T] [thread 40130] [3.0] [cxt 0] Bytes parsed: 14
+[04:51:47.823] [bmv2] [D] [thread 40130] [3.0] [cxt 0] Parser 'parser': end
+[04:51:47.823] [bmv2] [D] [thread 40130] [3.0] [cxt 0] Pipeline 'ingress': start
+[04:51:47.823] [bmv2] [T] [thread 40130] [3.0] [cxt 0] ecn.p4(133) Condition "hdr.ipv4.isValid()" (node_2) is false
+[04:51:47.823] [bmv2] [D] [thread 40130] [3.0] [cxt 0] Pipeline 'ingress': end
+[04:51:47.823] [bmv2] [D] [thread 40130] [3.0] [cxt 0] Egress port is 0
+[04:51:47.823] [bmv2] [D] [thread 40131] [3.0] [cxt 0] Pipeline 'egress': start
+[04:51:47.823] [bmv2] [T] [thread 40131] [3.0] [cxt 0] ecn.p4(152) Condition "hdr.ipv4.ecn == 1 || hdr.ipv4.ecn == 2" (node_6) is false
+[04:51:47.823] [bmv2] [T] [thread 40131] [3.0] [cxt 0] Applying table 'tbl_ecn162'
+[04:51:47.823] [bmv2] [D] [thread 40131] [3.0] [cxt 0] Looking up key:
+
+[04:51:47.823] [bmv2] [D] [thread 40131] [3.0] [cxt 0] Table 'tbl_ecn162': miss
+[04:51:47.823] [bmv2] [D] [thread 40131] [3.0] [cxt 0] Action entry is ecn162 - 
+[04:51:47.823] [bmv2] [T] [thread 40131] [3.0] [cxt 0] Action ecn162
+[04:51:47.823] [bmv2] [T] [thread 40131] [3.0] [cxt 0] ecn.p4(162) Primitive source_ip_register.read(source_ip_register_value, 0)
+[04:51:47.823] [bmv2] [T] [thread 40131] [3.0] [cxt 0] Read register 'MyEgress.source_ip_register' at index 0 read value 0
+[04:51:47.823] [bmv2] [T] [thread 40131] [3.0] [cxt 0] ecn.p4(163) Primitive source_port_register.read(source_port_register_value, 0)
+[04:51:47.823] [bmv2] [T] [thread 40131] [3.0] [cxt 0] Read register 'MyEgress.source_port_register' at index 0 read value 0
+[04:51:47.823] [bmv2] [T] [thread 40131] [3.0] [cxt 0] ecn.p4(165) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.ipv4.dstAddr == source_ip_register_value ..." (node_11) is false
+[04:51:47.823] [bmv2] [T] [thread 40131] [3.0] [cxt 0] ecn.p4(171) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.tcp.cwr == 1 && hdr.ipv4.srcAddr == source_ip_register_value" (node_13) is false
+[04:51:47.823] [bmv2] [D] [thread 40131] [3.0] [cxt 0] Pipeline 'egress': end
+[04:51:47.823] [bmv2] [D] [thread 40131] [3.0] [cxt 0] Deparser 'deparser': start
+[04:51:47.823] [bmv2] [T] [thread 40131] [3.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[04:51:47.823] [bmv2] [D] [thread 40131] [3.0] [cxt 0] Deparsing header 'ethernet'
+[04:51:47.823] [bmv2] [D] [thread 40131] [3.0] [cxt 0] Deparser 'deparser': end
+[04:51:47.823] [bmv2] [D] [thread 40135] [2.0] [cxt 0] Transmitting packet of size 90 out of port 0
+[04:51:47.823] [bmv2] [D] [thread 40135] [3.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[04:51:47.916] [bmv2] [D] [thread 40130] [4.0] [cxt 0] Processing packet received on port 2
+[04:51:47.916] [bmv2] [D] [thread 40130] [4.0] [cxt 0] Parser 'parser': start
+[04:51:47.916] [bmv2] [D] [thread 40130] [4.0] [cxt 0] Parser 'parser' entering state 'start'
+[04:51:47.916] [bmv2] [D] [thread 40130] [4.0] [cxt 0] Extracting header 'ethernet'
+[04:51:47.916] [bmv2] [D] [thread 40130] [4.0] [cxt 0] Parser state 'start': key is 86dd
+[04:51:47.916] [bmv2] [T] [thread 40130] [4.0] [cxt 0] Bytes parsed: 14
+[04:51:47.916] [bmv2] [D] [thread 40130] [4.0] [cxt 0] Parser 'parser': end
+[04:51:47.916] [bmv2] [D] [thread 40130] [4.0] [cxt 0] Pipeline 'ingress': start
+[04:51:47.916] [bmv2] [T] [thread 40130] [4.0] [cxt 0] ecn.p4(133) Condition "hdr.ipv4.isValid()" (node_2) is false
+[04:51:47.916] [bmv2] [D] [thread 40130] [4.0] [cxt 0] Pipeline 'ingress': end
+[04:51:47.916] [bmv2] [D] [thread 40130] [4.0] [cxt 0] Egress port is 0
+[04:51:47.916] [bmv2] [D] [thread 40131] [4.0] [cxt 0] Pipeline 'egress': start
+[04:51:47.916] [bmv2] [T] [thread 40131] [4.0] [cxt 0] ecn.p4(152) Condition "hdr.ipv4.ecn == 1 || hdr.ipv4.ecn == 2" (node_6) is false
+[04:51:47.916] [bmv2] [T] [thread 40131] [4.0] [cxt 0] Applying table 'tbl_ecn162'
+[04:51:47.916] [bmv2] [D] [thread 40131] [4.0] [cxt 0] Looking up key:
+
+[04:51:47.916] [bmv2] [D] [thread 40131] [4.0] [cxt 0] Table 'tbl_ecn162': miss
+[04:51:47.916] [bmv2] [D] [thread 40131] [4.0] [cxt 0] Action entry is ecn162 - 
+[04:51:47.916] [bmv2] [T] [thread 40131] [4.0] [cxt 0] Action ecn162
+[04:51:47.916] [bmv2] [T] [thread 40131] [4.0] [cxt 0] ecn.p4(162) Primitive source_ip_register.read(source_ip_register_value, 0)
+[04:51:47.916] [bmv2] [T] [thread 40131] [4.0] [cxt 0] Read register 'MyEgress.source_ip_register' at index 0 read value 0
+[04:51:47.916] [bmv2] [T] [thread 40131] [4.0] [cxt 0] ecn.p4(163) Primitive source_port_register.read(source_port_register_value, 0)
+[04:51:47.916] [bmv2] [T] [thread 40131] [4.0] [cxt 0] Read register 'MyEgress.source_port_register' at index 0 read value 0
+[04:51:47.916] [bmv2] [T] [thread 40131] [4.0] [cxt 0] ecn.p4(165) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.ipv4.dstAddr == source_ip_register_value ..." (node_11) is false
+[04:51:47.916] [bmv2] [T] [thread 40131] [4.0] [cxt 0] ecn.p4(171) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.tcp.cwr == 1 && hdr.ipv4.srcAddr == source_ip_register_value" (node_13) is false
+[04:51:47.916] [bmv2] [D] [thread 40131] [4.0] [cxt 0] Pipeline 'egress': end
+[04:51:47.916] [bmv2] [D] [thread 40131] [4.0] [cxt 0] Deparser 'deparser': start
+[04:51:47.916] [bmv2] [T] [thread 40131] [4.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[04:51:47.916] [bmv2] [D] [thread 40131] [4.0] [cxt 0] Deparsing header 'ethernet'
+[04:51:47.916] [bmv2] [D] [thread 40131] [4.0] [cxt 0] Deparser 'deparser': end
+[04:51:47.916] [bmv2] [D] [thread 40135] [4.0] [cxt 0] Transmitting packet of size 90 out of port 0
+[04:51:47.946] [bmv2] [D] [thread 40130] [5.0] [cxt 0] Processing packet received on port 1
+[04:51:47.946] [bmv2] [D] [thread 40130] [5.0] [cxt 0] Parser 'parser': start
+[04:51:47.946] [bmv2] [D] [thread 40130] [5.0] [cxt 0] Parser 'parser' entering state 'start'
+[04:51:47.946] [bmv2] [D] [thread 40130] [5.0] [cxt 0] Extracting header 'ethernet'
+[04:51:47.946] [bmv2] [D] [thread 40130] [5.0] [cxt 0] Parser state 'start': key is 86dd
+[04:51:47.946] [bmv2] [T] [thread 40130] [5.0] [cxt 0] Bytes parsed: 14
+[04:51:47.946] [bmv2] [D] [thread 40130] [5.0] [cxt 0] Parser 'parser': end
+[04:51:47.946] [bmv2] [D] [thread 40130] [5.0] [cxt 0] Pipeline 'ingress': start
+[04:51:47.946] [bmv2] [T] [thread 40130] [5.0] [cxt 0] ecn.p4(133) Condition "hdr.ipv4.isValid()" (node_2) is false
+[04:51:47.946] [bmv2] [D] [thread 40130] [5.0] [cxt 0] Pipeline 'ingress': end
+[04:51:47.946] [bmv2] [D] [thread 40130] [5.0] [cxt 0] Egress port is 0
+[04:51:47.946] [bmv2] [D] [thread 40131] [5.0] [cxt 0] Pipeline 'egress': start
+[04:51:47.946] [bmv2] [T] [thread 40131] [5.0] [cxt 0] ecn.p4(152) Condition "hdr.ipv4.ecn == 1 || hdr.ipv4.ecn == 2" (node_6) is false
+[04:51:47.946] [bmv2] [T] [thread 40131] [5.0] [cxt 0] Applying table 'tbl_ecn162'
+[04:51:47.946] [bmv2] [D] [thread 40131] [5.0] [cxt 0] Looking up key:
+
+[04:51:47.946] [bmv2] [D] [thread 40131] [5.0] [cxt 0] Table 'tbl_ecn162': miss
+[04:51:47.946] [bmv2] [D] [thread 40131] [5.0] [cxt 0] Action entry is ecn162 - 
+[04:51:47.946] [bmv2] [T] [thread 40131] [5.0] [cxt 0] Action ecn162
+[04:51:47.946] [bmv2] [T] [thread 40131] [5.0] [cxt 0] ecn.p4(162) Primitive source_ip_register.read(source_ip_register_value, 0)
+[04:51:47.946] [bmv2] [T] [thread 40131] [5.0] [cxt 0] Read register 'MyEgress.source_ip_register' at index 0 read value 0
+[04:51:47.946] [bmv2] [T] [thread 40131] [5.0] [cxt 0] ecn.p4(163) Primitive source_port_register.read(source_port_register_value, 0)
+[04:51:47.947] [bmv2] [T] [thread 40131] [5.0] [cxt 0] Read register 'MyEgress.source_port_register' at index 0 read value 0
+[04:51:47.947] [bmv2] [T] [thread 40131] [5.0] [cxt 0] ecn.p4(165) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.ipv4.dstAddr == source_ip_register_value ..." (node_11) is false
+[04:51:47.947] [bmv2] [T] [thread 40131] [5.0] [cxt 0] ecn.p4(171) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.tcp.cwr == 1 && hdr.ipv4.srcAddr == source_ip_register_value" (node_13) is false
+[04:51:47.947] [bmv2] [D] [thread 40131] [5.0] [cxt 0] Pipeline 'egress': end
+[04:51:47.947] [bmv2] [D] [thread 40131] [5.0] [cxt 0] Deparser 'deparser': start
+[04:51:47.947] [bmv2] [T] [thread 40131] [5.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[04:51:47.947] [bmv2] [D] [thread 40131] [5.0] [cxt 0] Deparsing header 'ethernet'
+[04:51:47.947] [bmv2] [D] [thread 40131] [5.0] [cxt 0] Deparser 'deparser': end
+[04:51:47.947] [bmv2] [D] [thread 40135] [5.0] [cxt 0] Transmitting packet of size 90 out of port 0
+[04:51:47.985] [bmv2] [D] [thread 40130] [6.0] [cxt 0] Processing packet received on port 3
+[04:51:47.985] [bmv2] [D] [thread 40130] [6.0] [cxt 0] Parser 'parser': start
+[04:51:47.985] [bmv2] [D] [thread 40130] [6.0] [cxt 0] Parser 'parser' entering state 'start'
+[04:51:47.985] [bmv2] [D] [thread 40130] [6.0] [cxt 0] Extracting header 'ethernet'
+[04:51:47.985] [bmv2] [D] [thread 40130] [6.0] [cxt 0] Parser state 'start': key is 86dd
+[04:51:47.985] [bmv2] [T] [thread 40130] [6.0] [cxt 0] Bytes parsed: 14
+[04:51:47.985] [bmv2] [D] [thread 40130] [6.0] [cxt 0] Parser 'parser': end
+[04:51:47.985] [bmv2] [D] [thread 40130] [6.0] [cxt 0] Pipeline 'ingress': start
+[04:51:47.985] [bmv2] [T] [thread 40130] [6.0] [cxt 0] ecn.p4(133) Condition "hdr.ipv4.isValid()" (node_2) is false
+[04:51:47.985] [bmv2] [D] [thread 40130] [6.0] [cxt 0] Pipeline 'ingress': end
+[04:51:47.985] [bmv2] [D] [thread 40130] [6.0] [cxt 0] Egress port is 0
+[04:51:47.985] [bmv2] [D] [thread 40131] [6.0] [cxt 0] Pipeline 'egress': start
+[04:51:47.985] [bmv2] [T] [thread 40131] [6.0] [cxt 0] ecn.p4(152) Condition "hdr.ipv4.ecn == 1 || hdr.ipv4.ecn == 2" (node_6) is false
+[04:51:47.985] [bmv2] [T] [thread 40131] [6.0] [cxt 0] Applying table 'tbl_ecn162'
+[04:51:47.985] [bmv2] [D] [thread 40131] [6.0] [cxt 0] Looking up key:
+
+[04:51:47.985] [bmv2] [D] [thread 40131] [6.0] [cxt 0] Table 'tbl_ecn162': miss
+[04:51:47.985] [bmv2] [D] [thread 40131] [6.0] [cxt 0] Action entry is ecn162 - 
+[04:51:47.985] [bmv2] [T] [thread 40131] [6.0] [cxt 0] Action ecn162
+[04:51:47.985] [bmv2] [T] [thread 40131] [6.0] [cxt 0] ecn.p4(162) Primitive source_ip_register.read(source_ip_register_value, 0)
+[04:51:47.986] [bmv2] [T] [thread 40131] [6.0] [cxt 0] Read register 'MyEgress.source_ip_register' at index 0 read value 0
+[04:51:47.986] [bmv2] [T] [thread 40131] [6.0] [cxt 0] ecn.p4(163) Primitive source_port_register.read(source_port_register_value, 0)
+[04:51:47.986] [bmv2] [T] [thread 40131] [6.0] [cxt 0] Read register 'MyEgress.source_port_register' at index 0 read value 0
+[04:51:47.986] [bmv2] [T] [thread 40131] [6.0] [cxt 0] ecn.p4(165) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.ipv4.dstAddr == source_ip_register_value ..." (node_11) is false
+[04:51:47.986] [bmv2] [T] [thread 40131] [6.0] [cxt 0] ecn.p4(171) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.tcp.cwr == 1 && hdr.ipv4.srcAddr == source_ip_register_value" (node_13) is false
+[04:51:47.986] [bmv2] [D] [thread 40131] [6.0] [cxt 0] Pipeline 'egress': end
+[04:51:47.986] [bmv2] [D] [thread 40131] [6.0] [cxt 0] Deparser 'deparser': start
+[04:51:47.986] [bmv2] [T] [thread 40131] [6.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[04:51:47.986] [bmv2] [D] [thread 40131] [6.0] [cxt 0] Deparsing header 'ethernet'
+[04:51:47.986] [bmv2] [D] [thread 40131] [6.0] [cxt 0] Deparser 'deparser': end
+[04:51:47.986] [bmv2] [D] [thread 40130] [7.0] [cxt 0] Processing packet received on port 3
+[04:51:47.986] [bmv2] [D] [thread 40130] [7.0] [cxt 0] Parser 'parser': start
+[04:51:47.986] [bmv2] [D] [thread 40130] [7.0] [cxt 0] Parser 'parser' entering state 'start'
+[04:51:47.986] [bmv2] [D] [thread 40130] [7.0] [cxt 0] Extracting header 'ethernet'
+[04:51:47.986] [bmv2] [D] [thread 40130] [7.0] [cxt 0] Parser state 'start': key is 86dd
+[04:51:47.986] [bmv2] [T] [thread 40130] [7.0] [cxt 0] Bytes parsed: 14
+[04:51:47.986] [bmv2] [D] [thread 40130] [7.0] [cxt 0] Parser 'parser': end
+[04:51:47.986] [bmv2] [D] [thread 40130] [7.0] [cxt 0] Pipeline 'ingress': start
+[04:51:47.986] [bmv2] [T] [thread 40130] [7.0] [cxt 0] ecn.p4(133) Condition "hdr.ipv4.isValid()" (node_2) is false
+[04:51:47.986] [bmv2] [D] [thread 40130] [7.0] [cxt 0] Pipeline 'ingress': end
+[04:51:47.986] [bmv2] [D] [thread 40130] [7.0] [cxt 0] Egress port is 0
+[04:51:47.986] [bmv2] [D] [thread 40131] [7.0] [cxt 0] Pipeline 'egress': start
+[04:51:47.986] [bmv2] [T] [thread 40131] [7.0] [cxt 0] ecn.p4(152) Condition "hdr.ipv4.ecn == 1 || hdr.ipv4.ecn == 2" (node_6) is false
+[04:51:47.986] [bmv2] [T] [thread 40131] [7.0] [cxt 0] Applying table 'tbl_ecn162'
+[04:51:47.986] [bmv2] [D] [thread 40131] [7.0] [cxt 0] Looking up key:
+
+[04:51:47.986] [bmv2] [D] [thread 40131] [7.0] [cxt 0] Table 'tbl_ecn162': miss
+[04:51:47.986] [bmv2] [D] [thread 40131] [7.0] [cxt 0] Action entry is ecn162 - 
+[04:51:47.986] [bmv2] [T] [thread 40131] [7.0] [cxt 0] Action ecn162
+[04:51:47.986] [bmv2] [T] [thread 40131] [7.0] [cxt 0] ecn.p4(162) Primitive source_ip_register.read(source_ip_register_value, 0)
+[04:51:47.986] [bmv2] [T] [thread 40131] [7.0] [cxt 0] Read register 'MyEgress.source_ip_register' at index 0 read value 0
+[04:51:47.986] [bmv2] [T] [thread 40131] [7.0] [cxt 0] ecn.p4(163) Primitive source_port_register.read(source_port_register_value, 0)
+[04:51:47.986] [bmv2] [T] [thread 40131] [7.0] [cxt 0] Read register 'MyEgress.source_port_register' at index 0 read value 0
+[04:51:47.986] [bmv2] [T] [thread 40131] [7.0] [cxt 0] ecn.p4(165) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.ipv4.dstAddr == source_ip_register_value ..." (node_11) is false
+[04:51:47.986] [bmv2] [T] [thread 40131] [7.0] [cxt 0] ecn.p4(171) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.tcp.cwr == 1 && hdr.ipv4.srcAddr == source_ip_register_value" (node_13) is false
+[04:51:47.986] [bmv2] [D] [thread 40131] [7.0] [cxt 0] Pipeline 'egress': end
+[04:51:47.986] [bmv2] [D] [thread 40131] [7.0] [cxt 0] Deparser 'deparser': start
+[04:51:47.986] [bmv2] [T] [thread 40131] [7.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[04:51:47.986] [bmv2] [D] [thread 40131] [7.0] [cxt 0] Deparsing header 'ethernet'
+[04:51:47.986] [bmv2] [D] [thread 40131] [7.0] [cxt 0] Deparser 'deparser': end
+[04:51:47.986] [bmv2] [D] [thread 40135] [6.0] [cxt 0] Transmitting packet of size 90 out of port 0
+[04:51:47.986] [bmv2] [D] [thread 40135] [7.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[04:51:48.300] [bmv2] [D] [thread 40130] [8.0] [cxt 0] Processing packet received on port 3
+[04:51:48.300] [bmv2] [D] [thread 40130] [8.0] [cxt 0] Parser 'parser': start
+[04:51:48.300] [bmv2] [D] [thread 40130] [8.0] [cxt 0] Parser 'parser' entering state 'start'
+[04:51:48.300] [bmv2] [D] [thread 40130] [8.0] [cxt 0] Extracting header 'ethernet'
+[04:51:48.300] [bmv2] [D] [thread 40130] [8.0] [cxt 0] Parser state 'start': key is 86dd
+[04:51:48.300] [bmv2] [T] [thread 40130] [8.0] [cxt 0] Bytes parsed: 14
+[04:51:48.300] [bmv2] [D] [thread 40130] [8.0] [cxt 0] Parser 'parser': end
+[04:51:48.300] [bmv2] [D] [thread 40130] [8.0] [cxt 0] Pipeline 'ingress': start
+[04:51:48.300] [bmv2] [T] [thread 40130] [8.0] [cxt 0] ecn.p4(133) Condition "hdr.ipv4.isValid()" (node_2) is false
+[04:51:48.300] [bmv2] [D] [thread 40130] [8.0] [cxt 0] Pipeline 'ingress': end
+[04:51:48.300] [bmv2] [D] [thread 40130] [8.0] [cxt 0] Egress port is 0
+[04:51:48.300] [bmv2] [D] [thread 40131] [8.0] [cxt 0] Pipeline 'egress': start
+[04:51:48.300] [bmv2] [T] [thread 40131] [8.0] [cxt 0] ecn.p4(152) Condition "hdr.ipv4.ecn == 1 || hdr.ipv4.ecn == 2" (node_6) is false
+[04:51:48.300] [bmv2] [T] [thread 40131] [8.0] [cxt 0] Applying table 'tbl_ecn162'
+[04:51:48.300] [bmv2] [D] [thread 40131] [8.0] [cxt 0] Looking up key:
+
+[04:51:48.300] [bmv2] [D] [thread 40131] [8.0] [cxt 0] Table 'tbl_ecn162': miss
+[04:51:48.300] [bmv2] [D] [thread 40131] [8.0] [cxt 0] Action entry is ecn162 - 
+[04:51:48.301] [bmv2] [T] [thread 40131] [8.0] [cxt 0] Action ecn162
+[04:51:48.301] [bmv2] [T] [thread 40131] [8.0] [cxt 0] ecn.p4(162) Primitive source_ip_register.read(source_ip_register_value, 0)
+[04:51:48.301] [bmv2] [T] [thread 40131] [8.0] [cxt 0] Read register 'MyEgress.source_ip_register' at index 0 read value 0
+[04:51:48.301] [bmv2] [T] [thread 40131] [8.0] [cxt 0] ecn.p4(163) Primitive source_port_register.read(source_port_register_value, 0)
+[04:51:48.301] [bmv2] [T] [thread 40131] [8.0] [cxt 0] Read register 'MyEgress.source_port_register' at index 0 read value 0
+[04:51:48.301] [bmv2] [T] [thread 40131] [8.0] [cxt 0] ecn.p4(165) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.ipv4.dstAddr == source_ip_register_value ..." (node_11) is false
+[04:51:48.301] [bmv2] [T] [thread 40131] [8.0] [cxt 0] ecn.p4(171) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.tcp.cwr == 1 && hdr.ipv4.srcAddr == source_ip_register_value" (node_13) is false
+[04:51:48.301] [bmv2] [D] [thread 40131] [8.0] [cxt 0] Pipeline 'egress': end
+[04:51:48.301] [bmv2] [D] [thread 40131] [8.0] [cxt 0] Deparser 'deparser': start
+[04:51:48.301] [bmv2] [T] [thread 40131] [8.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[04:51:48.301] [bmv2] [D] [thread 40131] [8.0] [cxt 0] Deparsing header 'ethernet'
+[04:51:48.301] [bmv2] [D] [thread 40131] [8.0] [cxt 0] Deparser 'deparser': end
+[04:51:48.301] [bmv2] [D] [thread 40135] [8.0] [cxt 0] Transmitting packet of size 90 out of port 0
+[04:51:48.397] [bmv2] [D] [thread 40130] [9.0] [cxt 0] Processing packet received on port 2
+[04:51:48.397] [bmv2] [D] [thread 40130] [9.0] [cxt 0] Parser 'parser': start
+[04:51:48.397] [bmv2] [D] [thread 40130] [9.0] [cxt 0] Parser 'parser' entering state 'start'
+[04:51:48.397] [bmv2] [D] [thread 40130] [9.0] [cxt 0] Extracting header 'ethernet'
+[04:51:48.397] [bmv2] [D] [thread 40130] [9.0] [cxt 0] Parser state 'start': key is 86dd
+[04:51:48.397] [bmv2] [T] [thread 40130] [9.0] [cxt 0] Bytes parsed: 14
+[04:51:48.397] [bmv2] [D] [thread 40130] [9.0] [cxt 0] Parser 'parser': end
+[04:51:48.397] [bmv2] [D] [thread 40130] [9.0] [cxt 0] Pipeline 'ingress': start
+[04:51:48.397] [bmv2] [T] [thread 40130] [9.0] [cxt 0] ecn.p4(133) Condition "hdr.ipv4.isValid()" (node_2) is false
+[04:51:48.397] [bmv2] [D] [thread 40130] [9.0] [cxt 0] Pipeline 'ingress': end
+[04:51:48.397] [bmv2] [D] [thread 40130] [9.0] [cxt 0] Egress port is 0
+[04:51:48.397] [bmv2] [D] [thread 40131] [9.0] [cxt 0] Pipeline 'egress': start
+[04:51:48.397] [bmv2] [T] [thread 40131] [9.0] [cxt 0] ecn.p4(152) Condition "hdr.ipv4.ecn == 1 || hdr.ipv4.ecn == 2" (node_6) is false
+[04:51:48.397] [bmv2] [T] [thread 40131] [9.0] [cxt 0] Applying table 'tbl_ecn162'
+[04:51:48.398] [bmv2] [D] [thread 40131] [9.0] [cxt 0] Looking up key:
+
+[04:51:48.398] [bmv2] [D] [thread 40131] [9.0] [cxt 0] Table 'tbl_ecn162': miss
+[04:51:48.398] [bmv2] [D] [thread 40131] [9.0] [cxt 0] Action entry is ecn162 - 
+[04:51:48.398] [bmv2] [T] [thread 40131] [9.0] [cxt 0] Action ecn162
+[04:51:48.398] [bmv2] [T] [thread 40131] [9.0] [cxt 0] ecn.p4(162) Primitive source_ip_register.read(source_ip_register_value, 0)
+[04:51:48.398] [bmv2] [T] [thread 40131] [9.0] [cxt 0] Read register 'MyEgress.source_ip_register' at index 0 read value 0
+[04:51:48.398] [bmv2] [T] [thread 40131] [9.0] [cxt 0] ecn.p4(163) Primitive source_port_register.read(source_port_register_value, 0)
+[04:51:48.398] [bmv2] [T] [thread 40131] [9.0] [cxt 0] Read register 'MyEgress.source_port_register' at index 0 read value 0
+[04:51:48.398] [bmv2] [T] [thread 40131] [9.0] [cxt 0] ecn.p4(165) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.ipv4.dstAddr == source_ip_register_value ..." (node_11) is false
+[04:51:48.398] [bmv2] [T] [thread 40131] [9.0] [cxt 0] ecn.p4(171) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.tcp.cwr == 1 && hdr.ipv4.srcAddr == source_ip_register_value" (node_13) is false
+[04:51:48.398] [bmv2] [D] [thread 40131] [9.0] [cxt 0] Pipeline 'egress': end
+[04:51:48.398] [bmv2] [D] [thread 40131] [9.0] [cxt 0] Deparser 'deparser': start
+[04:51:48.398] [bmv2] [T] [thread 40131] [9.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[04:51:48.398] [bmv2] [D] [thread 40131] [9.0] [cxt 0] Deparsing header 'ethernet'
+[04:51:48.398] [bmv2] [D] [thread 40131] [9.0] [cxt 0] Deparser 'deparser': end
+[04:51:48.398] [bmv2] [D] [thread 40135] [9.0] [cxt 0] Transmitting packet of size 90 out of port 0
+[04:51:48.844] [bmv2] [W] [thread 40171] [P4Runtime] p4::tmp::P4DeviceConfig is deprecated
+[04:51:48.845] [bmv2] [D] [thread 40171] Set default default entry for table 'MyIngress.ipv4_lpm': NoAction - 
+[04:51:48.846] [bmv2] [D] [thread 40171] Set default default entry for table 'tbl_mark_ecn': MyEgress.mark_ecn - 
+[04:51:48.846] [bmv2] [D] [thread 40171] Set default default entry for table 'tbl_ecn155': ecn155 - 
+[04:51:48.846] [bmv2] [D] [thread 40171] Set default default entry for table 'tbl_ecn162': ecn162 - 
+[04:51:48.846] [bmv2] [D] [thread 40171] Set default default entry for table 'tbl_ecn168': ecn168 - 
+[04:51:48.846] [bmv2] [D] [thread 40171] Set default default entry for table 'tbl_ecn173': ecn173 - 
+[04:51:48.846] [bmv2] [D] [thread 40171] simple_switch target has been notified of a config swap
+[04:51:48.849] [bmv2] [D] [thread 40172] Entry 0 added to table 'MyIngress.ipv4_lpm'
+[04:51:48.849] [bmv2] [D] [thread 40172] Dumping entry 0
+Match key:
+* hdr.ipv4.dstAddr    : LPM       0a000303/32
+Action entry: MyIngress.ipv4_forward - 80000000303,1,
+
+[04:51:48.850] [bmv2] [D] [thread 40171] Entry 1 added to table 'MyIngress.ipv4_lpm'
+[04:51:48.850] [bmv2] [D] [thread 40171] Dumping entry 1
+Match key:
+* hdr.ipv4.dstAddr    : LPM       0a000100/24
+Action entry: MyIngress.ipv4_forward - 80000000100,2,
+
+[04:51:48.850] [bmv2] [D] [thread 40172] Entry 2 added to table 'MyIngress.ipv4_lpm'
+[04:51:48.850] [bmv2] [D] [thread 40172] Dumping entry 2
+Match key:
+* hdr.ipv4.dstAddr    : LPM       0a000200/24
+Action entry: MyIngress.ipv4_forward - 80000000200,3,
+
+[04:51:51.213] [bmv2] [D] [thread 40130] [10.0] [cxt 0] Processing packet received on port 1
+[04:51:51.213] [bmv2] [D] [thread 40130] [10.0] [cxt 0] Parser 'parser': start
+[04:51:51.213] [bmv2] [D] [thread 40130] [10.0] [cxt 0] Parser 'parser' entering state 'start'
+[04:51:51.213] [bmv2] [D] [thread 40130] [10.0] [cxt 0] Extracting header 'ethernet'
+[04:51:51.213] [bmv2] [D] [thread 40130] [10.0] [cxt 0] Parser state 'start': key is 86dd
+[04:51:51.213] [bmv2] [T] [thread 40130] [10.0] [cxt 0] Bytes parsed: 14
+[04:51:51.213] [bmv2] [D] [thread 40130] [10.0] [cxt 0] Parser 'parser': end
+[04:51:51.213] [bmv2] [D] [thread 40130] [10.0] [cxt 0] Pipeline 'ingress': start
+[04:51:51.213] [bmv2] [T] [thread 40130] [10.0] [cxt 0] ecn.p4(133) Condition "hdr.ipv4.isValid()" (node_2) is false
+[04:51:51.213] [bmv2] [D] [thread 40130] [10.0] [cxt 0] Pipeline 'ingress': end
+[04:51:51.213] [bmv2] [D] [thread 40130] [10.0] [cxt 0] Egress port is 0
+[04:51:51.213] [bmv2] [D] [thread 40130] [11.0] [cxt 0] Processing packet received on port 2
+[04:51:51.213] [bmv2] [D] [thread 40130] [11.0] [cxt 0] Parser 'parser': start
+[04:51:51.213] [bmv2] [D] [thread 40130] [11.0] [cxt 0] Parser 'parser' entering state 'start'
+[04:51:51.213] [bmv2] [D] [thread 40130] [11.0] [cxt 0] Extracting header 'ethernet'
+[04:51:51.213] [bmv2] [D] [thread 40130] [11.0] [cxt 0] Parser state 'start': key is 86dd
+[04:51:51.213] [bmv2] [T] [thread 40130] [11.0] [cxt 0] Bytes parsed: 14
+[04:51:51.213] [bmv2] [D] [thread 40130] [11.0] [cxt 0] Parser 'parser': end
+[04:51:51.213] [bmv2] [D] [thread 40130] [11.0] [cxt 0] Pipeline 'ingress': start
+[04:51:51.213] [bmv2] [T] [thread 40130] [11.0] [cxt 0] ecn.p4(133) Condition "hdr.ipv4.isValid()" (node_2) is false
+[04:51:51.213] [bmv2] [D] [thread 40130] [11.0] [cxt 0] Pipeline 'ingress': end
+[04:51:51.213] [bmv2] [D] [thread 40130] [11.0] [cxt 0] Egress port is 0
+[04:51:51.214] [bmv2] [D] [thread 40131] [10.0] [cxt 0] Pipeline 'egress': start
+[04:51:51.214] [bmv2] [T] [thread 40131] [10.0] [cxt 0] ecn.p4(152) Condition "hdr.ipv4.ecn == 1 || hdr.ipv4.ecn == 2" (node_6) is false
+[04:51:51.214] [bmv2] [T] [thread 40131] [10.0] [cxt 0] Applying table 'tbl_ecn162'
+[04:51:51.214] [bmv2] [D] [thread 40131] [10.0] [cxt 0] Looking up key:
+
+[04:51:51.214] [bmv2] [D] [thread 40131] [10.0] [cxt 0] Table 'tbl_ecn162': miss
+[04:51:51.214] [bmv2] [D] [thread 40131] [10.0] [cxt 0] Action entry is ecn162 - 
+[04:51:51.214] [bmv2] [T] [thread 40131] [10.0] [cxt 0] Action ecn162
+[04:51:51.214] [bmv2] [T] [thread 40131] [10.0] [cxt 0] ecn.p4(162) Primitive source_ip_register.read(source_ip_register_value, 0)
+[04:51:51.214] [bmv2] [T] [thread 40131] [10.0] [cxt 0] Read register 'MyEgress.source_ip_register' at index 0 read value 0
+[04:51:51.214] [bmv2] [T] [thread 40131] [10.0] [cxt 0] ecn.p4(163) Primitive source_port_register.read(source_port_register_value, 0)
+[04:51:51.214] [bmv2] [T] [thread 40131] [10.0] [cxt 0] Read register 'MyEgress.source_port_register' at index 0 read value 0
+[04:51:51.214] [bmv2] [T] [thread 40131] [10.0] [cxt 0] ecn.p4(165) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.ipv4.dstAddr == source_ip_register_value ..." (node_11) is false
+[04:51:51.214] [bmv2] [T] [thread 40131] [10.0] [cxt 0] ecn.p4(171) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.tcp.cwr == 1 && hdr.ipv4.srcAddr == source_ip_register_value" (node_13) is false
+[04:51:51.214] [bmv2] [D] [thread 40131] [10.0] [cxt 0] Pipeline 'egress': end
+[04:51:51.214] [bmv2] [D] [thread 40131] [10.0] [cxt 0] Deparser 'deparser': start
+[04:51:51.214] [bmv2] [T] [thread 40131] [10.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[04:51:51.214] [bmv2] [D] [thread 40131] [10.0] [cxt 0] Deparsing header 'ethernet'
+[04:51:51.214] [bmv2] [D] [thread 40131] [10.0] [cxt 0] Deparser 'deparser': end
+[04:51:51.214] [bmv2] [D] [thread 40131] [11.0] [cxt 0] Pipeline 'egress': start
+[04:51:51.214] [bmv2] [T] [thread 40131] [11.0] [cxt 0] ecn.p4(152) Condition "hdr.ipv4.ecn == 1 || hdr.ipv4.ecn == 2" (node_6) is false
+[04:51:51.214] [bmv2] [T] [thread 40131] [11.0] [cxt 0] Applying table 'tbl_ecn162'
+[04:51:51.214] [bmv2] [D] [thread 40131] [11.0] [cxt 0] Looking up key:
+
+[04:51:51.214] [bmv2] [D] [thread 40131] [11.0] [cxt 0] Table 'tbl_ecn162': miss
+[04:51:51.214] [bmv2] [D] [thread 40131] [11.0] [cxt 0] Action entry is ecn162 - 
+[04:51:51.214] [bmv2] [D] [thread 40135] [10.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[04:51:51.214] [bmv2] [T] [thread 40131] [11.0] [cxt 0] Action ecn162
+[04:51:51.215] [bmv2] [T] [thread 40131] [11.0] [cxt 0] ecn.p4(162) Primitive source_ip_register.read(source_ip_register_value, 0)
+[04:51:51.215] [bmv2] [T] [thread 40131] [11.0] [cxt 0] Read register 'MyEgress.source_ip_register' at index 0 read value 0
+[04:51:51.215] [bmv2] [T] [thread 40131] [11.0] [cxt 0] ecn.p4(163) Primitive source_port_register.read(source_port_register_value, 0)
+[04:51:51.215] [bmv2] [T] [thread 40131] [11.0] [cxt 0] Read register 'MyEgress.source_port_register' at index 0 read value 0
+[04:51:51.215] [bmv2] [T] [thread 40131] [11.0] [cxt 0] ecn.p4(165) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.ipv4.dstAddr == source_ip_register_value ..." (node_11) is false
+[04:51:51.215] [bmv2] [T] [thread 40131] [11.0] [cxt 0] ecn.p4(171) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.tcp.cwr == 1 && hdr.ipv4.srcAddr == source_ip_register_value" (node_13) is false
+[04:51:51.215] [bmv2] [D] [thread 40131] [11.0] [cxt 0] Pipeline 'egress': end
+[04:51:51.215] [bmv2] [D] [thread 40131] [11.0] [cxt 0] Deparser 'deparser': start
+[04:51:51.215] [bmv2] [T] [thread 40131] [11.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[04:51:51.215] [bmv2] [D] [thread 40131] [11.0] [cxt 0] Deparsing header 'ethernet'
+[04:51:51.215] [bmv2] [D] [thread 40131] [11.0] [cxt 0] Deparser 'deparser': end
+[04:51:51.215] [bmv2] [D] [thread 40135] [11.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[04:51:51.466] [bmv2] [D] [thread 40130] [12.0] [cxt 0] Processing packet received on port 3
+[04:51:51.466] [bmv2] [D] [thread 40130] [12.0] [cxt 0] Parser 'parser': start
+[04:51:51.466] [bmv2] [D] [thread 40130] [12.0] [cxt 0] Parser 'parser' entering state 'start'
+[04:51:51.466] [bmv2] [D] [thread 40130] [12.0] [cxt 0] Extracting header 'ethernet'
+[04:51:51.466] [bmv2] [D] [thread 40130] [12.0] [cxt 0] Parser state 'start': key is 86dd
+[04:51:51.466] [bmv2] [T] [thread 40130] [12.0] [cxt 0] Bytes parsed: 14
+[04:51:51.466] [bmv2] [D] [thread 40130] [12.0] [cxt 0] Parser 'parser': end
+[04:51:51.466] [bmv2] [D] [thread 40130] [12.0] [cxt 0] Pipeline 'ingress': start
+[04:51:51.466] [bmv2] [T] [thread 40130] [12.0] [cxt 0] ecn.p4(133) Condition "hdr.ipv4.isValid()" (node_2) is false
+[04:51:51.466] [bmv2] [D] [thread 40130] [12.0] [cxt 0] Pipeline 'ingress': end
+[04:51:51.466] [bmv2] [D] [thread 40130] [12.0] [cxt 0] Egress port is 0
+[04:51:51.467] [bmv2] [D] [thread 40131] [12.0] [cxt 0] Pipeline 'egress': start
+[04:51:51.467] [bmv2] [T] [thread 40131] [12.0] [cxt 0] ecn.p4(152) Condition "hdr.ipv4.ecn == 1 || hdr.ipv4.ecn == 2" (node_6) is false
+[04:51:51.467] [bmv2] [T] [thread 40131] [12.0] [cxt 0] Applying table 'tbl_ecn162'
+[04:51:51.467] [bmv2] [D] [thread 40131] [12.0] [cxt 0] Looking up key:
+
+[04:51:51.467] [bmv2] [D] [thread 40131] [12.0] [cxt 0] Table 'tbl_ecn162': miss
+[04:51:51.467] [bmv2] [D] [thread 40131] [12.0] [cxt 0] Action entry is ecn162 - 
+[04:51:51.467] [bmv2] [T] [thread 40131] [12.0] [cxt 0] Action ecn162
+[04:51:51.467] [bmv2] [T] [thread 40131] [12.0] [cxt 0] ecn.p4(162) Primitive source_ip_register.read(source_ip_register_value, 0)
+[04:51:51.467] [bmv2] [T] [thread 40131] [12.0] [cxt 0] Read register 'MyEgress.source_ip_register' at index 0 read value 0
+[04:51:51.467] [bmv2] [T] [thread 40131] [12.0] [cxt 0] ecn.p4(163) Primitive source_port_register.read(source_port_register_value, 0)
+[04:51:51.467] [bmv2] [T] [thread 40131] [12.0] [cxt 0] Read register 'MyEgress.source_port_register' at index 0 read value 0
+[04:51:51.467] [bmv2] [T] [thread 40131] [12.0] [cxt 0] ecn.p4(165) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.ipv4.dstAddr == source_ip_register_value ..." (node_11) is false
+[04:51:51.467] [bmv2] [T] [thread 40131] [12.0] [cxt 0] ecn.p4(171) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.tcp.cwr == 1 && hdr.ipv4.srcAddr == source_ip_register_value" (node_13) is false
+[04:51:51.467] [bmv2] [D] [thread 40131] [12.0] [cxt 0] Pipeline 'egress': end
+[04:51:51.467] [bmv2] [D] [thread 40131] [12.0] [cxt 0] Deparser 'deparser': start
+[04:51:51.467] [bmv2] [T] [thread 40131] [12.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[04:51:51.467] [bmv2] [D] [thread 40131] [12.0] [cxt 0] Deparsing header 'ethernet'
+[04:51:51.467] [bmv2] [D] [thread 40131] [12.0] [cxt 0] Deparser 'deparser': end
+[04:51:51.467] [bmv2] [D] [thread 40135] [12.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[04:51:51.981] [bmv2] [D] [thread 40130] [13.0] [cxt 0] Processing packet received on port 2
+[04:51:51.981] [bmv2] [D] [thread 40130] [13.0] [cxt 0] Parser 'parser': start
+[04:51:51.981] [bmv2] [D] [thread 40130] [13.0] [cxt 0] Parser 'parser' entering state 'start'
+[04:51:51.981] [bmv2] [D] [thread 40130] [13.0] [cxt 0] Extracting header 'ethernet'
+[04:51:51.981] [bmv2] [D] [thread 40130] [13.0] [cxt 0] Parser state 'start': key is 86dd
+[04:51:51.981] [bmv2] [T] [thread 40130] [13.0] [cxt 0] Bytes parsed: 14
+[04:51:51.981] [bmv2] [D] [thread 40130] [13.0] [cxt 0] Parser 'parser': end
+[04:51:51.981] [bmv2] [D] [thread 40130] [13.0] [cxt 0] Pipeline 'ingress': start
+[04:51:51.981] [bmv2] [T] [thread 40130] [13.0] [cxt 0] ecn.p4(133) Condition "hdr.ipv4.isValid()" (node_2) is false
+[04:51:51.981] [bmv2] [D] [thread 40130] [13.0] [cxt 0] Pipeline 'ingress': end
+[04:51:51.981] [bmv2] [D] [thread 40130] [13.0] [cxt 0] Egress port is 0
+[04:51:51.981] [bmv2] [D] [thread 40131] [13.0] [cxt 0] Pipeline 'egress': start
+[04:51:51.981] [bmv2] [T] [thread 40131] [13.0] [cxt 0] ecn.p4(152) Condition "hdr.ipv4.ecn == 1 || hdr.ipv4.ecn == 2" (node_6) is false
+[04:51:51.981] [bmv2] [T] [thread 40131] [13.0] [cxt 0] Applying table 'tbl_ecn162'
+[04:51:51.981] [bmv2] [D] [thread 40131] [13.0] [cxt 0] Looking up key:
+
+[04:51:51.981] [bmv2] [D] [thread 40131] [13.0] [cxt 0] Table 'tbl_ecn162': miss
+[04:51:51.981] [bmv2] [D] [thread 40131] [13.0] [cxt 0] Action entry is ecn162 - 
+[04:51:51.981] [bmv2] [T] [thread 40131] [13.0] [cxt 0] Action ecn162
+[04:51:51.981] [bmv2] [T] [thread 40131] [13.0] [cxt 0] ecn.p4(162) Primitive source_ip_register.read(source_ip_register_value, 0)
+[04:51:51.981] [bmv2] [T] [thread 40131] [13.0] [cxt 0] Read register 'MyEgress.source_ip_register' at index 0 read value 0
+[04:51:51.981] [bmv2] [T] [thread 40131] [13.0] [cxt 0] ecn.p4(163) Primitive source_port_register.read(source_port_register_value, 0)
+[04:51:51.981] [bmv2] [T] [thread 40131] [13.0] [cxt 0] Read register 'MyEgress.source_port_register' at index 0 read value 0
+[04:51:51.981] [bmv2] [T] [thread 40131] [13.0] [cxt 0] ecn.p4(165) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.ipv4.dstAddr == source_ip_register_value ..." (node_11) is false
+[04:51:51.981] [bmv2] [T] [thread 40131] [13.0] [cxt 0] ecn.p4(171) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.tcp.cwr == 1 && hdr.ipv4.srcAddr == source_ip_register_value" (node_13) is false
+[04:51:51.981] [bmv2] [D] [thread 40131] [13.0] [cxt 0] Pipeline 'egress': end
+[04:51:51.981] [bmv2] [D] [thread 40131] [13.0] [cxt 0] Deparser 'deparser': start
+[04:51:51.981] [bmv2] [T] [thread 40131] [13.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[04:51:51.981] [bmv2] [D] [thread 40131] [13.0] [cxt 0] Deparsing header 'ethernet'
+[04:51:51.981] [bmv2] [D] [thread 40131] [13.0] [cxt 0] Deparser 'deparser': end
+[04:51:51.981] [bmv2] [D] [thread 40135] [13.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[04:51:52.491] [bmv2] [D] [thread 40130] [14.0] [cxt 0] Processing packet received on port 3
+[04:51:52.491] [bmv2] [D] [thread 40130] [14.0] [cxt 0] Parser 'parser': start
+[04:51:52.491] [bmv2] [D] [thread 40130] [14.0] [cxt 0] Parser 'parser' entering state 'start'
+[04:51:52.492] [bmv2] [D] [thread 40130] [14.0] [cxt 0] Extracting header 'ethernet'
+[04:51:52.492] [bmv2] [D] [thread 40130] [14.0] [cxt 0] Parser state 'start': key is 86dd
+[04:51:52.492] [bmv2] [T] [thread 40130] [14.0] [cxt 0] Bytes parsed: 14
+[04:51:52.492] [bmv2] [D] [thread 40130] [14.0] [cxt 0] Parser 'parser': end
+[04:51:52.492] [bmv2] [D] [thread 40130] [14.0] [cxt 0] Pipeline 'ingress': start
+[04:51:52.492] [bmv2] [T] [thread 40130] [14.0] [cxt 0] ecn.p4(133) Condition "hdr.ipv4.isValid()" (node_2) is false
+[04:51:52.492] [bmv2] [D] [thread 40130] [14.0] [cxt 0] Pipeline 'ingress': end
+[04:51:52.492] [bmv2] [D] [thread 40130] [14.0] [cxt 0] Egress port is 0
+[04:51:52.492] [bmv2] [D] [thread 40131] [14.0] [cxt 0] Pipeline 'egress': start
+[04:51:52.492] [bmv2] [T] [thread 40131] [14.0] [cxt 0] ecn.p4(152) Condition "hdr.ipv4.ecn == 1 || hdr.ipv4.ecn == 2" (node_6) is false
+[04:51:52.492] [bmv2] [T] [thread 40131] [14.0] [cxt 0] Applying table 'tbl_ecn162'
+[04:51:52.492] [bmv2] [D] [thread 40131] [14.0] [cxt 0] Looking up key:
+
+[04:51:52.492] [bmv2] [D] [thread 40131] [14.0] [cxt 0] Table 'tbl_ecn162': miss
+[04:51:52.492] [bmv2] [D] [thread 40131] [14.0] [cxt 0] Action entry is ecn162 - 
+[04:51:52.492] [bmv2] [T] [thread 40131] [14.0] [cxt 0] Action ecn162
+[04:51:52.492] [bmv2] [T] [thread 40131] [14.0] [cxt 0] ecn.p4(162) Primitive source_ip_register.read(source_ip_register_value, 0)
+[04:51:52.492] [bmv2] [T] [thread 40131] [14.0] [cxt 0] Read register 'MyEgress.source_ip_register' at index 0 read value 0
+[04:51:52.492] [bmv2] [T] [thread 40131] [14.0] [cxt 0] ecn.p4(163) Primitive source_port_register.read(source_port_register_value, 0)
+[04:51:52.492] [bmv2] [T] [thread 40131] [14.0] [cxt 0] Read register 'MyEgress.source_port_register' at index 0 read value 0
+[04:51:52.492] [bmv2] [T] [thread 40131] [14.0] [cxt 0] ecn.p4(165) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.ipv4.dstAddr == source_ip_register_value ..." (node_11) is false
+[04:51:52.492] [bmv2] [T] [thread 40131] [14.0] [cxt 0] ecn.p4(171) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.tcp.cwr == 1 && hdr.ipv4.srcAddr == source_ip_register_value" (node_13) is false
+[04:51:52.492] [bmv2] [D] [thread 40131] [14.0] [cxt 0] Pipeline 'egress': end
+[04:51:52.492] [bmv2] [D] [thread 40131] [14.0] [cxt 0] Deparser 'deparser': start
+[04:51:52.492] [bmv2] [T] [thread 40131] [14.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[04:51:52.492] [bmv2] [D] [thread 40131] [14.0] [cxt 0] Deparsing header 'ethernet'
+[04:51:52.492] [bmv2] [D] [thread 40131] [14.0] [cxt 0] Deparser 'deparser': end
+[04:51:52.492] [bmv2] [D] [thread 40135] [14.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[04:51:58.636] [bmv2] [D] [thread 40130] [15.0] [cxt 0] Processing packet received on port 1
+[04:51:58.636] [bmv2] [D] [thread 40130] [15.0] [cxt 0] Parser 'parser': start
+[04:51:58.636] [bmv2] [D] [thread 40130] [15.0] [cxt 0] Parser 'parser' entering state 'start'
+[04:51:58.636] [bmv2] [D] [thread 40130] [15.0] [cxt 0] Extracting header 'ethernet'
+[04:51:58.636] [bmv2] [D] [thread 40130] [15.0] [cxt 0] Parser state 'start': key is 86dd
+[04:51:58.637] [bmv2] [T] [thread 40130] [15.0] [cxt 0] Bytes parsed: 14
+[04:51:58.637] [bmv2] [D] [thread 40130] [15.0] [cxt 0] Parser 'parser': end
+[04:51:58.637] [bmv2] [D] [thread 40130] [15.0] [cxt 0] Pipeline 'ingress': start
+[04:51:58.637] [bmv2] [T] [thread 40130] [15.0] [cxt 0] ecn.p4(133) Condition "hdr.ipv4.isValid()" (node_2) is false
+[04:51:58.637] [bmv2] [D] [thread 40130] [15.0] [cxt 0] Pipeline 'ingress': end
+[04:51:58.637] [bmv2] [D] [thread 40130] [15.0] [cxt 0] Egress port is 0
+[04:51:58.637] [bmv2] [D] [thread 40131] [15.0] [cxt 0] Pipeline 'egress': start
+[04:51:58.637] [bmv2] [T] [thread 40131] [15.0] [cxt 0] ecn.p4(152) Condition "hdr.ipv4.ecn == 1 || hdr.ipv4.ecn == 2" (node_6) is false
+[04:51:58.637] [bmv2] [T] [thread 40131] [15.0] [cxt 0] Applying table 'tbl_ecn162'
+[04:51:58.637] [bmv2] [D] [thread 40131] [15.0] [cxt 0] Looking up key:
+
+[04:51:58.637] [bmv2] [D] [thread 40131] [15.0] [cxt 0] Table 'tbl_ecn162': miss
+[04:51:58.637] [bmv2] [D] [thread 40131] [15.0] [cxt 0] Action entry is ecn162 - 
+[04:51:58.637] [bmv2] [T] [thread 40131] [15.0] [cxt 0] Action ecn162
+[04:51:58.637] [bmv2] [T] [thread 40131] [15.0] [cxt 0] ecn.p4(162) Primitive source_ip_register.read(source_ip_register_value, 0)
+[04:51:58.637] [bmv2] [T] [thread 40131] [15.0] [cxt 0] Read register 'MyEgress.source_ip_register' at index 0 read value 0
+[04:51:58.637] [bmv2] [T] [thread 40131] [15.0] [cxt 0] ecn.p4(163) Primitive source_port_register.read(source_port_register_value, 0)
+[04:51:58.637] [bmv2] [T] [thread 40131] [15.0] [cxt 0] Read register 'MyEgress.source_port_register' at index 0 read value 0
+[04:51:58.637] [bmv2] [T] [thread 40131] [15.0] [cxt 0] ecn.p4(165) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.ipv4.dstAddr == source_ip_register_value ..." (node_11) is false
+[04:51:58.637] [bmv2] [T] [thread 40131] [15.0] [cxt 0] ecn.p4(171) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.tcp.cwr == 1 && hdr.ipv4.srcAddr == source_ip_register_value" (node_13) is false
+[04:51:58.637] [bmv2] [D] [thread 40131] [15.0] [cxt 0] Pipeline 'egress': end
+[04:51:58.637] [bmv2] [D] [thread 40131] [15.0] [cxt 0] Deparser 'deparser': start
+[04:51:58.637] [bmv2] [T] [thread 40131] [15.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[04:51:58.637] [bmv2] [D] [thread 40131] [15.0] [cxt 0] Deparsing header 'ethernet'
+[04:51:58.637] [bmv2] [D] [thread 40131] [15.0] [cxt 0] Deparser 'deparser': end
+[04:51:58.637] [bmv2] [D] [thread 40135] [15.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[04:51:59.918] [bmv2] [D] [thread 40130] [16.0] [cxt 0] Processing packet received on port 3
+[04:51:59.918] [bmv2] [D] [thread 40130] [16.0] [cxt 0] Parser 'parser': start
+[04:51:59.918] [bmv2] [D] [thread 40130] [16.0] [cxt 0] Parser 'parser' entering state 'start'
+[04:51:59.918] [bmv2] [D] [thread 40130] [16.0] [cxt 0] Extracting header 'ethernet'
+[04:51:59.918] [bmv2] [D] [thread 40130] [16.0] [cxt 0] Parser state 'start': key is 86dd
+[04:51:59.918] [bmv2] [T] [thread 40130] [16.0] [cxt 0] Bytes parsed: 14
+[04:51:59.918] [bmv2] [D] [thread 40130] [16.0] [cxt 0] Parser 'parser': end
+[04:51:59.918] [bmv2] [D] [thread 40130] [16.0] [cxt 0] Pipeline 'ingress': start
+[04:51:59.918] [bmv2] [T] [thread 40130] [16.0] [cxt 0] ecn.p4(133) Condition "hdr.ipv4.isValid()" (node_2) is false
+[04:51:59.918] [bmv2] [D] [thread 40130] [16.0] [cxt 0] Pipeline 'ingress': end
+[04:51:59.918] [bmv2] [D] [thread 40130] [16.0] [cxt 0] Egress port is 0
+[04:51:59.918] [bmv2] [D] [thread 40131] [16.0] [cxt 0] Pipeline 'egress': start
+[04:51:59.918] [bmv2] [T] [thread 40131] [16.0] [cxt 0] ecn.p4(152) Condition "hdr.ipv4.ecn == 1 || hdr.ipv4.ecn == 2" (node_6) is false
+[04:51:59.918] [bmv2] [T] [thread 40131] [16.0] [cxt 0] Applying table 'tbl_ecn162'
+[04:51:59.918] [bmv2] [D] [thread 40131] [16.0] [cxt 0] Looking up key:
+
+[04:51:59.918] [bmv2] [D] [thread 40131] [16.0] [cxt 0] Table 'tbl_ecn162': miss
+[04:51:59.918] [bmv2] [D] [thread 40131] [16.0] [cxt 0] Action entry is ecn162 - 
+[04:51:59.918] [bmv2] [T] [thread 40131] [16.0] [cxt 0] Action ecn162
+[04:51:59.918] [bmv2] [T] [thread 40131] [16.0] [cxt 0] ecn.p4(162) Primitive source_ip_register.read(source_ip_register_value, 0)
+[04:51:59.918] [bmv2] [T] [thread 40131] [16.0] [cxt 0] Read register 'MyEgress.source_ip_register' at index 0 read value 0
+[04:51:59.918] [bmv2] [T] [thread 40131] [16.0] [cxt 0] ecn.p4(163) Primitive source_port_register.read(source_port_register_value, 0)
+[04:51:59.918] [bmv2] [T] [thread 40131] [16.0] [cxt 0] Read register 'MyEgress.source_port_register' at index 0 read value 0
+[04:51:59.918] [bmv2] [T] [thread 40131] [16.0] [cxt 0] ecn.p4(165) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.ipv4.dstAddr == source_ip_register_value ..." (node_11) is false
+[04:51:59.918] [bmv2] [T] [thread 40131] [16.0] [cxt 0] ecn.p4(171) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.tcp.cwr == 1 && hdr.ipv4.srcAddr == source_ip_register_value" (node_13) is false
+[04:51:59.918] [bmv2] [D] [thread 40131] [16.0] [cxt 0] Pipeline 'egress': end
+[04:51:59.918] [bmv2] [D] [thread 40131] [16.0] [cxt 0] Deparser 'deparser': start
+[04:51:59.918] [bmv2] [T] [thread 40131] [16.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[04:51:59.918] [bmv2] [D] [thread 40131] [16.0] [cxt 0] Deparsing header 'ethernet'
+[04:51:59.918] [bmv2] [D] [thread 40131] [16.0] [cxt 0] Deparser 'deparser': end
+[04:51:59.918] [bmv2] [D] [thread 40135] [16.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[04:52:00.176] [bmv2] [D] [thread 40130] [17.0] [cxt 0] Processing packet received on port 2
+[04:52:00.176] [bmv2] [D] [thread 40130] [17.0] [cxt 0] Parser 'parser': start
+[04:52:00.176] [bmv2] [D] [thread 40130] [17.0] [cxt 0] Parser 'parser' entering state 'start'
+[04:52:00.176] [bmv2] [D] [thread 40130] [17.0] [cxt 0] Extracting header 'ethernet'
+[04:52:00.176] [bmv2] [D] [thread 40130] [17.0] [cxt 0] Parser state 'start': key is 86dd
+[04:52:00.176] [bmv2] [T] [thread 40130] [17.0] [cxt 0] Bytes parsed: 14
+[04:52:00.176] [bmv2] [D] [thread 40130] [17.0] [cxt 0] Parser 'parser': end
+[04:52:00.176] [bmv2] [D] [thread 40130] [17.0] [cxt 0] Pipeline 'ingress': start
+[04:52:00.176] [bmv2] [T] [thread 40130] [17.0] [cxt 0] ecn.p4(133) Condition "hdr.ipv4.isValid()" (node_2) is false
+[04:52:00.176] [bmv2] [D] [thread 40130] [17.0] [cxt 0] Pipeline 'ingress': end
+[04:52:00.176] [bmv2] [D] [thread 40130] [17.0] [cxt 0] Egress port is 0
+[04:52:00.176] [bmv2] [D] [thread 40131] [17.0] [cxt 0] Pipeline 'egress': start
+[04:52:00.176] [bmv2] [T] [thread 40131] [17.0] [cxt 0] ecn.p4(152) Condition "hdr.ipv4.ecn == 1 || hdr.ipv4.ecn == 2" (node_6) is false
+[04:52:00.176] [bmv2] [T] [thread 40131] [17.0] [cxt 0] Applying table 'tbl_ecn162'
+[04:52:00.176] [bmv2] [D] [thread 40131] [17.0] [cxt 0] Looking up key:
+
+[04:52:00.176] [bmv2] [D] [thread 40131] [17.0] [cxt 0] Table 'tbl_ecn162': miss
+[04:52:00.176] [bmv2] [D] [thread 40131] [17.0] [cxt 0] Action entry is ecn162 - 
+[04:52:00.176] [bmv2] [T] [thread 40131] [17.0] [cxt 0] Action ecn162
+[04:52:00.176] [bmv2] [T] [thread 40131] [17.0] [cxt 0] ecn.p4(162) Primitive source_ip_register.read(source_ip_register_value, 0)
+[04:52:00.176] [bmv2] [T] [thread 40131] [17.0] [cxt 0] Read register 'MyEgress.source_ip_register' at index 0 read value 0
+[04:52:00.176] [bmv2] [T] [thread 40131] [17.0] [cxt 0] ecn.p4(163) Primitive source_port_register.read(source_port_register_value, 0)
+[04:52:00.176] [bmv2] [T] [thread 40131] [17.0] [cxt 0] Read register 'MyEgress.source_port_register' at index 0 read value 0
+[04:52:00.176] [bmv2] [T] [thread 40131] [17.0] [cxt 0] ecn.p4(165) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.ipv4.dstAddr == source_ip_register_value ..." (node_11) is false
+[04:52:00.176] [bmv2] [T] [thread 40131] [17.0] [cxt 0] ecn.p4(171) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.tcp.cwr == 1 && hdr.ipv4.srcAddr == source_ip_register_value" (node_13) is false
+[04:52:00.176] [bmv2] [D] [thread 40131] [17.0] [cxt 0] Pipeline 'egress': end
+[04:52:00.176] [bmv2] [D] [thread 40131] [17.0] [cxt 0] Deparser 'deparser': start
+[04:52:00.176] [bmv2] [T] [thread 40131] [17.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[04:52:00.176] [bmv2] [D] [thread 40131] [17.0] [cxt 0] Deparsing header 'ethernet'
+[04:52:00.176] [bmv2] [D] [thread 40131] [17.0] [cxt 0] Deparser 'deparser': end
+[04:52:00.176] [bmv2] [D] [thread 40135] [17.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[04:52:00.430] [bmv2] [D] [thread 40130] [18.0] [cxt 0] Processing packet received on port 2
+[04:52:00.430] [bmv2] [D] [thread 40130] [18.0] [cxt 0] Parser 'parser': start
+[04:52:00.430] [bmv2] [D] [thread 40130] [18.0] [cxt 0] Parser 'parser' entering state 'start'
+[04:52:00.430] [bmv2] [D] [thread 40130] [18.0] [cxt 0] Extracting header 'ethernet'
+[04:52:00.430] [bmv2] [D] [thread 40130] [18.0] [cxt 0] Parser state 'start': key is 86dd
+[04:52:00.430] [bmv2] [T] [thread 40130] [18.0] [cxt 0] Bytes parsed: 14
+[04:52:00.430] [bmv2] [D] [thread 40130] [18.0] [cxt 0] Parser 'parser': end
+[04:52:00.430] [bmv2] [D] [thread 40130] [18.0] [cxt 0] Pipeline 'ingress': start
+[04:52:00.430] [bmv2] [T] [thread 40130] [18.0] [cxt 0] ecn.p4(133) Condition "hdr.ipv4.isValid()" (node_2) is false
+[04:52:00.430] [bmv2] [D] [thread 40130] [18.0] [cxt 0] Pipeline 'ingress': end
+[04:52:00.430] [bmv2] [D] [thread 40130] [18.0] [cxt 0] Egress port is 0
+[04:52:00.430] [bmv2] [D] [thread 40131] [18.0] [cxt 0] Pipeline 'egress': start
+[04:52:00.430] [bmv2] [T] [thread 40131] [18.0] [cxt 0] ecn.p4(152) Condition "hdr.ipv4.ecn == 1 || hdr.ipv4.ecn == 2" (node_6) is false
+[04:52:00.430] [bmv2] [T] [thread 40131] [18.0] [cxt 0] Applying table 'tbl_ecn162'
+[04:52:00.430] [bmv2] [D] [thread 40131] [18.0] [cxt 0] Looking up key:
+
+[04:52:00.430] [bmv2] [D] [thread 40131] [18.0] [cxt 0] Table 'tbl_ecn162': miss
+[04:52:00.430] [bmv2] [D] [thread 40131] [18.0] [cxt 0] Action entry is ecn162 - 
+[04:52:00.430] [bmv2] [T] [thread 40131] [18.0] [cxt 0] Action ecn162
+[04:52:00.430] [bmv2] [T] [thread 40131] [18.0] [cxt 0] ecn.p4(162) Primitive source_ip_register.read(source_ip_register_value, 0)
+[04:52:00.430] [bmv2] [T] [thread 40131] [18.0] [cxt 0] Read register 'MyEgress.source_ip_register' at index 0 read value 0
+[04:52:00.430] [bmv2] [T] [thread 40131] [18.0] [cxt 0] ecn.p4(163) Primitive source_port_register.read(source_port_register_value, 0)
+[04:52:00.430] [bmv2] [T] [thread 40131] [18.0] [cxt 0] Read register 'MyEgress.source_port_register' at index 0 read value 0
+[04:52:00.430] [bmv2] [T] [thread 40131] [18.0] [cxt 0] ecn.p4(165) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.ipv4.dstAddr == source_ip_register_value ..." (node_11) is false
+[04:52:00.430] [bmv2] [T] [thread 40131] [18.0] [cxt 0] ecn.p4(171) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.tcp.cwr == 1 && hdr.ipv4.srcAddr == source_ip_register_value" (node_13) is false
+[04:52:00.430] [bmv2] [D] [thread 40131] [18.0] [cxt 0] Pipeline 'egress': end
+[04:52:00.430] [bmv2] [D] [thread 40131] [18.0] [cxt 0] Deparser 'deparser': start
+[04:52:00.430] [bmv2] [T] [thread 40131] [18.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[04:52:00.430] [bmv2] [D] [thread 40131] [18.0] [cxt 0] Deparsing header 'ethernet'
+[04:52:00.430] [bmv2] [D] [thread 40131] [18.0] [cxt 0] Deparser 'deparser': end
+[04:52:00.430] [bmv2] [D] [thread 40135] [18.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[04:52:00.941] [bmv2] [D] [thread 40130] [19.0] [cxt 0] Processing packet received on port 3
+[04:52:00.941] [bmv2] [D] [thread 40130] [19.0] [cxt 0] Parser 'parser': start
+[04:52:00.941] [bmv2] [D] [thread 40130] [19.0] [cxt 0] Parser 'parser' entering state 'start'
+[04:52:00.941] [bmv2] [D] [thread 40130] [19.0] [cxt 0] Extracting header 'ethernet'
+[04:52:00.941] [bmv2] [D] [thread 40130] [19.0] [cxt 0] Parser state 'start': key is 86dd
+[04:52:00.941] [bmv2] [T] [thread 40130] [19.0] [cxt 0] Bytes parsed: 14
+[04:52:00.941] [bmv2] [D] [thread 40130] [19.0] [cxt 0] Parser 'parser': end
+[04:52:00.941] [bmv2] [D] [thread 40130] [19.0] [cxt 0] Pipeline 'ingress': start
+[04:52:00.941] [bmv2] [T] [thread 40130] [19.0] [cxt 0] ecn.p4(133) Condition "hdr.ipv4.isValid()" (node_2) is false
+[04:52:00.941] [bmv2] [D] [thread 40130] [19.0] [cxt 0] Pipeline 'ingress': end
+[04:52:00.941] [bmv2] [D] [thread 40130] [19.0] [cxt 0] Egress port is 0
+[04:52:00.941] [bmv2] [D] [thread 40131] [19.0] [cxt 0] Pipeline 'egress': start
+[04:52:00.941] [bmv2] [T] [thread 40131] [19.0] [cxt 0] ecn.p4(152) Condition "hdr.ipv4.ecn == 1 || hdr.ipv4.ecn == 2" (node_6) is false
+[04:52:00.941] [bmv2] [T] [thread 40131] [19.0] [cxt 0] Applying table 'tbl_ecn162'
+[04:52:00.941] [bmv2] [D] [thread 40131] [19.0] [cxt 0] Looking up key:
+
+[04:52:00.941] [bmv2] [D] [thread 40131] [19.0] [cxt 0] Table 'tbl_ecn162': miss
+[04:52:00.941] [bmv2] [D] [thread 40131] [19.0] [cxt 0] Action entry is ecn162 - 
+[04:52:00.941] [bmv2] [T] [thread 40131] [19.0] [cxt 0] Action ecn162
+[04:52:00.941] [bmv2] [T] [thread 40131] [19.0] [cxt 0] ecn.p4(162) Primitive source_ip_register.read(source_ip_register_value, 0)
+[04:52:00.941] [bmv2] [T] [thread 40131] [19.0] [cxt 0] Read register 'MyEgress.source_ip_register' at index 0 read value 0
+[04:52:00.941] [bmv2] [T] [thread 40131] [19.0] [cxt 0] ecn.p4(163) Primitive source_port_register.read(source_port_register_value, 0)
+[04:52:00.941] [bmv2] [T] [thread 40131] [19.0] [cxt 0] Read register 'MyEgress.source_port_register' at index 0 read value 0
+[04:52:00.941] [bmv2] [T] [thread 40131] [19.0] [cxt 0] ecn.p4(165) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.ipv4.dstAddr == source_ip_register_value ..." (node_11) is false
+[04:52:00.941] [bmv2] [T] [thread 40131] [19.0] [cxt 0] ecn.p4(171) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.tcp.cwr == 1 && hdr.ipv4.srcAddr == source_ip_register_value" (node_13) is false
+[04:52:00.941] [bmv2] [D] [thread 40131] [19.0] [cxt 0] Pipeline 'egress': end
+[04:52:00.941] [bmv2] [D] [thread 40131] [19.0] [cxt 0] Deparser 'deparser': start
+[04:52:00.941] [bmv2] [T] [thread 40131] [19.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[04:52:00.941] [bmv2] [D] [thread 40131] [19.0] [cxt 0] Deparsing header 'ethernet'
+[04:52:00.941] [bmv2] [D] [thread 40131] [19.0] [cxt 0] Deparser 'deparser': end
+[04:52:00.941] [bmv2] [D] [thread 40135] [19.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[04:52:13.997] [bmv2] [D] [thread 40130] [20.0] [cxt 0] Processing packet received on port 1
+[04:52:13.997] [bmv2] [D] [thread 40130] [20.0] [cxt 0] Parser 'parser': start
+[04:52:13.997] [bmv2] [D] [thread 40130] [20.0] [cxt 0] Parser 'parser' entering state 'start'
+[04:52:13.997] [bmv2] [D] [thread 40130] [20.0] [cxt 0] Extracting header 'ethernet'
+[04:52:13.997] [bmv2] [D] [thread 40130] [20.0] [cxt 0] Parser state 'start': key is 86dd
+[04:52:13.997] [bmv2] [T] [thread 40130] [20.0] [cxt 0] Bytes parsed: 14
+[04:52:13.997] [bmv2] [D] [thread 40130] [20.0] [cxt 0] Parser 'parser': end
+[04:52:13.997] [bmv2] [D] [thread 40130] [20.0] [cxt 0] Pipeline 'ingress': start
+[04:52:13.997] [bmv2] [T] [thread 40130] [20.0] [cxt 0] ecn.p4(133) Condition "hdr.ipv4.isValid()" (node_2) is false
+[04:52:13.997] [bmv2] [D] [thread 40130] [20.0] [cxt 0] Pipeline 'ingress': end
+[04:52:13.997] [bmv2] [D] [thread 40130] [20.0] [cxt 0] Egress port is 0
+[04:52:13.998] [bmv2] [D] [thread 40131] [20.0] [cxt 0] Pipeline 'egress': start
+[04:52:13.998] [bmv2] [T] [thread 40131] [20.0] [cxt 0] ecn.p4(152) Condition "hdr.ipv4.ecn == 1 || hdr.ipv4.ecn == 2" (node_6) is false
+[04:52:13.998] [bmv2] [T] [thread 40131] [20.0] [cxt 0] Applying table 'tbl_ecn162'
+[04:52:13.998] [bmv2] [D] [thread 40131] [20.0] [cxt 0] Looking up key:
+
+[04:52:13.998] [bmv2] [D] [thread 40131] [20.0] [cxt 0] Table 'tbl_ecn162': miss
+[04:52:13.998] [bmv2] [D] [thread 40131] [20.0] [cxt 0] Action entry is ecn162 - 
+[04:52:13.998] [bmv2] [T] [thread 40131] [20.0] [cxt 0] Action ecn162
+[04:52:13.998] [bmv2] [T] [thread 40131] [20.0] [cxt 0] ecn.p4(162) Primitive source_ip_register.read(source_ip_register_value, 0)
+[04:52:13.998] [bmv2] [T] [thread 40131] [20.0] [cxt 0] Read register 'MyEgress.source_ip_register' at index 0 read value 0
+[04:52:13.998] [bmv2] [T] [thread 40131] [20.0] [cxt 0] ecn.p4(163) Primitive source_port_register.read(source_port_register_value, 0)
+[04:52:13.999] [bmv2] [T] [thread 40131] [20.0] [cxt 0] Read register 'MyEgress.source_port_register' at index 0 read value 0
+[04:52:13.999] [bmv2] [T] [thread 40131] [20.0] [cxt 0] ecn.p4(165) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.ipv4.dstAddr == source_ip_register_value ..." (node_11) is false
+[04:52:13.999] [bmv2] [T] [thread 40131] [20.0] [cxt 0] ecn.p4(171) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.tcp.cwr == 1 && hdr.ipv4.srcAddr == source_ip_register_value" (node_13) is false
+[04:52:13.999] [bmv2] [D] [thread 40131] [20.0] [cxt 0] Pipeline 'egress': end
+[04:52:13.999] [bmv2] [D] [thread 40131] [20.0] [cxt 0] Deparser 'deparser': start
+[04:52:13.999] [bmv2] [T] [thread 40131] [20.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[04:52:13.999] [bmv2] [D] [thread 40131] [20.0] [cxt 0] Deparsing header 'ethernet'
+[04:52:13.999] [bmv2] [D] [thread 40131] [20.0] [cxt 0] Deparser 'deparser': end
+[04:52:13.999] [bmv2] [D] [thread 40135] [20.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[04:52:17.327] [bmv2] [D] [thread 40130] [21.0] [cxt 0] Processing packet received on port 2
+[04:52:17.327] [bmv2] [D] [thread 40130] [21.0] [cxt 0] Parser 'parser': start
+[04:52:17.327] [bmv2] [D] [thread 40130] [21.0] [cxt 0] Parser 'parser' entering state 'start'
+[04:52:17.327] [bmv2] [D] [thread 40130] [21.0] [cxt 0] Extracting header 'ethernet'
+[04:52:17.327] [bmv2] [D] [thread 40130] [21.0] [cxt 0] Parser state 'start': key is 86dd
+[04:52:17.327] [bmv2] [T] [thread 40130] [21.0] [cxt 0] Bytes parsed: 14
+[04:52:17.327] [bmv2] [D] [thread 40130] [21.0] [cxt 0] Parser 'parser': end
+[04:52:17.327] [bmv2] [D] [thread 40130] [21.0] [cxt 0] Pipeline 'ingress': start
+[04:52:17.327] [bmv2] [T] [thread 40130] [21.0] [cxt 0] ecn.p4(133) Condition "hdr.ipv4.isValid()" (node_2) is false
+[04:52:17.327] [bmv2] [D] [thread 40130] [21.0] [cxt 0] Pipeline 'ingress': end
+[04:52:17.327] [bmv2] [D] [thread 40130] [21.0] [cxt 0] Egress port is 0
+[04:52:17.327] [bmv2] [D] [thread 40130] [22.0] [cxt 0] Processing packet received on port 3
+[04:52:17.327] [bmv2] [D] [thread 40130] [22.0] [cxt 0] Parser 'parser': start
+[04:52:17.327] [bmv2] [D] [thread 40130] [22.0] [cxt 0] Parser 'parser' entering state 'start'
+[04:52:17.327] [bmv2] [D] [thread 40130] [22.0] [cxt 0] Extracting header 'ethernet'
+[04:52:17.327] [bmv2] [D] [thread 40130] [22.0] [cxt 0] Parser state 'start': key is 86dd
+[04:52:17.327] [bmv2] [T] [thread 40130] [22.0] [cxt 0] Bytes parsed: 14
+[04:52:17.327] [bmv2] [D] [thread 40130] [22.0] [cxt 0] Parser 'parser': end
+[04:52:17.327] [bmv2] [D] [thread 40130] [22.0] [cxt 0] Pipeline 'ingress': start
+[04:52:17.328] [bmv2] [T] [thread 40130] [22.0] [cxt 0] ecn.p4(133) Condition "hdr.ipv4.isValid()" (node_2) is false
+[04:52:17.328] [bmv2] [D] [thread 40130] [22.0] [cxt 0] Pipeline 'ingress': end
+[04:52:17.328] [bmv2] [D] [thread 40130] [22.0] [cxt 0] Egress port is 0
+[04:52:17.328] [bmv2] [D] [thread 40131] [21.0] [cxt 0] Pipeline 'egress': start
+[04:52:17.328] [bmv2] [T] [thread 40131] [21.0] [cxt 0] ecn.p4(152) Condition "hdr.ipv4.ecn == 1 || hdr.ipv4.ecn == 2" (node_6) is false
+[04:52:17.328] [bmv2] [T] [thread 40131] [21.0] [cxt 0] Applying table 'tbl_ecn162'
+[04:52:17.328] [bmv2] [D] [thread 40131] [21.0] [cxt 0] Looking up key:
+
+[04:52:17.328] [bmv2] [D] [thread 40131] [21.0] [cxt 0] Table 'tbl_ecn162': miss
+[04:52:17.328] [bmv2] [D] [thread 40131] [21.0] [cxt 0] Action entry is ecn162 - 
+[04:52:17.328] [bmv2] [T] [thread 40131] [21.0] [cxt 0] Action ecn162
+[04:52:17.328] [bmv2] [T] [thread 40131] [21.0] [cxt 0] ecn.p4(162) Primitive source_ip_register.read(source_ip_register_value, 0)
+[04:52:17.328] [bmv2] [T] [thread 40131] [21.0] [cxt 0] Read register 'MyEgress.source_ip_register' at index 0 read value 0
+[04:52:17.328] [bmv2] [T] [thread 40131] [21.0] [cxt 0] ecn.p4(163) Primitive source_port_register.read(source_port_register_value, 0)
+[04:52:17.328] [bmv2] [T] [thread 40131] [21.0] [cxt 0] Read register 'MyEgress.source_port_register' at index 0 read value 0
+[04:52:17.328] [bmv2] [T] [thread 40131] [21.0] [cxt 0] ecn.p4(165) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.ipv4.dstAddr == source_ip_register_value ..." (node_11) is false
+[04:52:17.328] [bmv2] [T] [thread 40131] [21.0] [cxt 0] ecn.p4(171) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.tcp.cwr == 1 && hdr.ipv4.srcAddr == source_ip_register_value" (node_13) is false
+[04:52:17.328] [bmv2] [D] [thread 40131] [21.0] [cxt 0] Pipeline 'egress': end
+[04:52:17.328] [bmv2] [D] [thread 40131] [21.0] [cxt 0] Deparser 'deparser': start
+[04:52:17.328] [bmv2] [T] [thread 40131] [21.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[04:52:17.328] [bmv2] [D] [thread 40131] [21.0] [cxt 0] Deparsing header 'ethernet'
+[04:52:17.328] [bmv2] [D] [thread 40131] [21.0] [cxt 0] Deparser 'deparser': end
+[04:52:17.328] [bmv2] [D] [thread 40131] [22.0] [cxt 0] Pipeline 'egress': start
+[04:52:17.328] [bmv2] [T] [thread 40131] [22.0] [cxt 0] ecn.p4(152) Condition "hdr.ipv4.ecn == 1 || hdr.ipv4.ecn == 2" (node_6) is false
+[04:52:17.328] [bmv2] [T] [thread 40131] [22.0] [cxt 0] Applying table 'tbl_ecn162'
+[04:52:17.328] [bmv2] [D] [thread 40131] [22.0] [cxt 0] Looking up key:
+
+[04:52:17.328] [bmv2] [D] [thread 40131] [22.0] [cxt 0] Table 'tbl_ecn162': miss
+[04:52:17.328] [bmv2] [D] [thread 40131] [22.0] [cxt 0] Action entry is ecn162 - 
+[04:52:17.328] [bmv2] [T] [thread 40131] [22.0] [cxt 0] Action ecn162
+[04:52:17.328] [bmv2] [T] [thread 40131] [22.0] [cxt 0] ecn.p4(162) Primitive source_ip_register.read(source_ip_register_value, 0)
+[04:52:17.328] [bmv2] [T] [thread 40131] [22.0] [cxt 0] Read register 'MyEgress.source_ip_register' at index 0 read value 0
+[04:52:17.328] [bmv2] [T] [thread 40131] [22.0] [cxt 0] ecn.p4(163) Primitive source_port_register.read(source_port_register_value, 0)
+[04:52:17.328] [bmv2] [T] [thread 40131] [22.0] [cxt 0] Read register 'MyEgress.source_port_register' at index 0 read value 0
+[04:52:17.328] [bmv2] [T] [thread 40131] [22.0] [cxt 0] ecn.p4(165) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.ipv4.dstAddr == source_ip_register_value ..." (node_11) is false
+[04:52:17.328] [bmv2] [T] [thread 40131] [22.0] [cxt 0] ecn.p4(171) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.tcp.cwr == 1 && hdr.ipv4.srcAddr == source_ip_register_value" (node_13) is false
+[04:52:17.328] [bmv2] [D] [thread 40131] [22.0] [cxt 0] Pipeline 'egress': end
+[04:52:17.328] [bmv2] [D] [thread 40131] [22.0] [cxt 0] Deparser 'deparser': start
+[04:52:17.328] [bmv2] [T] [thread 40131] [22.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[04:52:17.328] [bmv2] [D] [thread 40131] [22.0] [cxt 0] Deparsing header 'ethernet'
+[04:52:17.328] [bmv2] [D] [thread 40131] [22.0] [cxt 0] Deparser 'deparser': end
+[04:52:17.328] [bmv2] [D] [thread 40135] [21.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[04:52:17.328] [bmv2] [D] [thread 40135] [22.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[04:52:19.373] [bmv2] [D] [thread 40130] [23.0] [cxt 0] Processing packet received on port 2
+[04:52:19.373] [bmv2] [D] [thread 40130] [23.0] [cxt 0] Parser 'parser': start
+[04:52:19.373] [bmv2] [D] [thread 40130] [23.0] [cxt 0] Parser 'parser' entering state 'start'
+[04:52:19.373] [bmv2] [D] [thread 40130] [23.0] [cxt 0] Extracting header 'ethernet'
+[04:52:19.373] [bmv2] [D] [thread 40130] [23.0] [cxt 0] Parser state 'start': key is 86dd
+[04:52:19.373] [bmv2] [T] [thread 40130] [23.0] [cxt 0] Bytes parsed: 14
+[04:52:19.373] [bmv2] [D] [thread 40130] [23.0] [cxt 0] Parser 'parser': end
+[04:52:19.373] [bmv2] [D] [thread 40130] [23.0] [cxt 0] Pipeline 'ingress': start
+[04:52:19.373] [bmv2] [T] [thread 40130] [23.0] [cxt 0] ecn.p4(133) Condition "hdr.ipv4.isValid()" (node_2) is false
+[04:52:19.373] [bmv2] [D] [thread 40130] [23.0] [cxt 0] Pipeline 'ingress': end
+[04:52:19.373] [bmv2] [D] [thread 40130] [23.0] [cxt 0] Egress port is 0
+[04:52:19.373] [bmv2] [D] [thread 40130] [24.0] [cxt 0] Processing packet received on port 3
+[04:52:19.373] [bmv2] [D] [thread 40130] [24.0] [cxt 0] Parser 'parser': start
+[04:52:19.373] [bmv2] [D] [thread 40130] [24.0] [cxt 0] Parser 'parser' entering state 'start'
+[04:52:19.373] [bmv2] [D] [thread 40130] [24.0] [cxt 0] Extracting header 'ethernet'
+[04:52:19.373] [bmv2] [D] [thread 40130] [24.0] [cxt 0] Parser state 'start': key is 86dd
+[04:52:19.373] [bmv2] [T] [thread 40130] [24.0] [cxt 0] Bytes parsed: 14
+[04:52:19.373] [bmv2] [D] [thread 40130] [24.0] [cxt 0] Parser 'parser': end
+[04:52:19.373] [bmv2] [D] [thread 40130] [24.0] [cxt 0] Pipeline 'ingress': start
+[04:52:19.373] [bmv2] [T] [thread 40130] [24.0] [cxt 0] ecn.p4(133) Condition "hdr.ipv4.isValid()" (node_2) is false
+[04:52:19.373] [bmv2] [D] [thread 40130] [24.0] [cxt 0] Pipeline 'ingress': end
+[04:52:19.373] [bmv2] [D] [thread 40130] [24.0] [cxt 0] Egress port is 0
+[04:52:19.373] [bmv2] [D] [thread 40131] [23.0] [cxt 0] Pipeline 'egress': start
+[04:52:19.373] [bmv2] [T] [thread 40131] [23.0] [cxt 0] ecn.p4(152) Condition "hdr.ipv4.ecn == 1 || hdr.ipv4.ecn == 2" (node_6) is false
+[04:52:19.373] [bmv2] [T] [thread 40131] [23.0] [cxt 0] Applying table 'tbl_ecn162'
+[04:52:19.373] [bmv2] [D] [thread 40131] [23.0] [cxt 0] Looking up key:
+
+[04:52:19.373] [bmv2] [D] [thread 40131] [23.0] [cxt 0] Table 'tbl_ecn162': miss
+[04:52:19.373] [bmv2] [D] [thread 40131] [23.0] [cxt 0] Action entry is ecn162 - 
+[04:52:19.373] [bmv2] [T] [thread 40131] [23.0] [cxt 0] Action ecn162
+[04:52:19.373] [bmv2] [T] [thread 40131] [23.0] [cxt 0] ecn.p4(162) Primitive source_ip_register.read(source_ip_register_value, 0)
+[04:52:19.373] [bmv2] [T] [thread 40131] [23.0] [cxt 0] Read register 'MyEgress.source_ip_register' at index 0 read value 0
+[04:52:19.373] [bmv2] [T] [thread 40131] [23.0] [cxt 0] ecn.p4(163) Primitive source_port_register.read(source_port_register_value, 0)
+[04:52:19.373] [bmv2] [T] [thread 40131] [23.0] [cxt 0] Read register 'MyEgress.source_port_register' at index 0 read value 0
+[04:52:19.373] [bmv2] [T] [thread 40131] [23.0] [cxt 0] ecn.p4(165) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.ipv4.dstAddr == source_ip_register_value ..." (node_11) is false
+[04:52:19.373] [bmv2] [T] [thread 40131] [23.0] [cxt 0] ecn.p4(171) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.tcp.cwr == 1 && hdr.ipv4.srcAddr == source_ip_register_value" (node_13) is false
+[04:52:19.373] [bmv2] [D] [thread 40131] [23.0] [cxt 0] Pipeline 'egress': end
+[04:52:19.373] [bmv2] [D] [thread 40131] [23.0] [cxt 0] Deparser 'deparser': start
+[04:52:19.373] [bmv2] [T] [thread 40131] [23.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[04:52:19.373] [bmv2] [D] [thread 40131] [23.0] [cxt 0] Deparsing header 'ethernet'
+[04:52:19.373] [bmv2] [D] [thread 40131] [23.0] [cxt 0] Deparser 'deparser': end
+[04:52:19.373] [bmv2] [D] [thread 40131] [24.0] [cxt 0] Pipeline 'egress': start
+[04:52:19.373] [bmv2] [T] [thread 40131] [24.0] [cxt 0] ecn.p4(152) Condition "hdr.ipv4.ecn == 1 || hdr.ipv4.ecn == 2" (node_6) is false
+[04:52:19.373] [bmv2] [T] [thread 40131] [24.0] [cxt 0] Applying table 'tbl_ecn162'
+[04:52:19.373] [bmv2] [D] [thread 40131] [24.0] [cxt 0] Looking up key:
+
+[04:52:19.373] [bmv2] [D] [thread 40131] [24.0] [cxt 0] Table 'tbl_ecn162': miss
+[04:52:19.373] [bmv2] [D] [thread 40131] [24.0] [cxt 0] Action entry is ecn162 - 
+[04:52:19.373] [bmv2] [T] [thread 40131] [24.0] [cxt 0] Action ecn162
+[04:52:19.373] [bmv2] [T] [thread 40131] [24.0] [cxt 0] ecn.p4(162) Primitive source_ip_register.read(source_ip_register_value, 0)
+[04:52:19.373] [bmv2] [T] [thread 40131] [24.0] [cxt 0] Read register 'MyEgress.source_ip_register' at index 0 read value 0
+[04:52:19.373] [bmv2] [T] [thread 40131] [24.0] [cxt 0] ecn.p4(163) Primitive source_port_register.read(source_port_register_value, 0)
+[04:52:19.373] [bmv2] [T] [thread 40131] [24.0] [cxt 0] Read register 'MyEgress.source_port_register' at index 0 read value 0
+[04:52:19.373] [bmv2] [T] [thread 40131] [24.0] [cxt 0] ecn.p4(165) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.ipv4.dstAddr == source_ip_register_value ..." (node_11) is false
+[04:52:19.373] [bmv2] [T] [thread 40131] [24.0] [cxt 0] ecn.p4(171) Condition "hdr.tcp.ctrl & 16 != 0 && hdr.tcp.cwr == 1 && hdr.ipv4.srcAddr == source_ip_register_value" (node_13) is false
+[04:52:19.373] [bmv2] [D] [thread 40131] [24.0] [cxt 0] Pipeline 'egress': end
+[04:52:19.373] [bmv2] [D] [thread 40131] [24.0] [cxt 0] Deparser 'deparser': start
+[04:52:19.373] [bmv2] [T] [thread 40131] [24.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[04:52:19.373] [bmv2] [D] [thread 40131] [24.0] [cxt 0] Deparsing header 'ethernet'
+[04:52:19.373] [bmv2] [D] [thread 40131] [24.0] [cxt 0] Deparser 'deparser': end
+[04:52:19.373] [bmv2] [D] [thread 40135] [23.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[04:52:19.373] [bmv2] [D] [thread 40135] [24.0] [cxt 0] Transmitting packet of size 70 out of port 0
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
