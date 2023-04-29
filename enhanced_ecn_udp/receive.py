@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
 import sys
-
 from scapy.all import get_if_list, sniff
 
-
 def get_if():
-    ifs=get_if_list()
-    iface=None
+    ifs = get_if_list()
+    iface = None
     for i in get_if_list():
         if "eth0" in i:
             iface=i
@@ -21,7 +19,6 @@ def handle_pkt(pkt):
     pkt.show2()
 #    hexdump(pkt)
     sys.stdout.flush()
-
 
 def main():
     iface = 'eth0'
